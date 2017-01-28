@@ -2,7 +2,7 @@
 export ZSH=/Users/robbie/.oh-my-zsh
 
 # Set name of the theme to load.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="robburple"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"

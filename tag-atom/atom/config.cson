@@ -1,0 +1,63 @@
+"*":
+  "atom-beautify":
+    general:
+      _analyticsUserId: "9c99d26c-6c3f-495d-a7c6-561b1179b422"
+      analytics: false
+    js:
+      indent_size: 2
+  "autocomplete-python":
+    useKite: false
+  core:
+    customFileTypes:
+      "source.ini": [
+        ".buckconfig"
+        ".hgrc"
+        ".flowconfig"
+      ]
+      "source.json": [
+        ".arcconfig"
+        "BUCK.autodeps"
+      ]
+      "source.python": [
+        "BUCK"
+      ]
+    disabledPackages: [
+      "atom-jade"
+      "nuclide-format-js"
+      "activate-power-mode"
+      "atom-xcode"
+    ]
+    excludeVcsIgnoredPaths: false
+    openEmptyEditorOnStart: false
+    packagesWithKeymapsDisabled: [
+      "atom-beautify"
+    ]
+    projectHome: "/Users/robbie/code"
+    telemetryConsent: "no"
+  editor:
+    autoIndentOnPaste: false
+    fontSize: 12
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+  "exception-reporting":
+    userId: "cd8e5cad-58e3-5d09-8852-18d4c8990e92"
+  "highlight-selected":
+    lightTheme: true
+  linter:
+    errorPanelHeight: 22
+  "linter-eslint":
+    fixOnSave: true
+  "linter-jscs":
+    onlyConfig: true
+  "linter-jshint":
+    disableWhenNoJshintrcFileInPath: true
+  minimap: {}
+  nuclide:
+    installRecommendedPackages: true
+    "nuclide-home":
+      showHome: false
+  "tool-bar":
+    visible: false
+  welcome:
+    showOnStartup: false

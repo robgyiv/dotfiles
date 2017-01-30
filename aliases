@@ -6,6 +6,7 @@ alias gnum="git rev-list --all --count"
 
 # editors
 alias v=nvim
+alias apm-pkg='apm list --installed --bare'
 
 # notebooks
 alias nbk="cd ~/code/notebooks && jupyter notebook"

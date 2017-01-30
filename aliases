@@ -1,25 +1,24 @@
 # git
 alias gida="git config user.email 'robbie@asidatascience.com'"
 alias gidr="git config user.email 'robbie@roygbiv.co.uk'"
-alias gbv="git branch -v"
-alias gnum="git rev-list --all --count"
+alias gbv='git branch -v'
+alias gnum='git rev-list --all --count'
 
 # editors
 alias v=nvim
 alias apm-pkg='apm list --installed --bare'
 
 # notebooks
-alias nbk="cd ~/code/notebooks && jupyter notebook"
-alias nbkc="jupyter notebook"
+alias nbk='cd ~/code/notebooks && jupyter notebook'
+alias nbkc='jupyter notebook'
 
 # useful
-alias cwd="pwd | pbcopy"
+alias cwd='pwd | pbcopy'
 alias bigfolders="du -k ~ | awk '$1 > 50000' | sort -nr"
-alias apprm="mdfind -name $1" # find all files associated with an app
-alias brewup="brew update && brew upgrade"
+alias apprm='mdfind -name $1' # find all files associated with an app
+alias brewup='brew update && brew upgrade'
 alias path='echo $PATH | tr -s ":" "\n"'
 
 # venv
-alias venv="virtualenv venv -p $1"
-alias avenv="source venv/bin/activate"
-
+alias venv='virtualenv venv -p $1'
+alias avenv='source venv/bin/activate'

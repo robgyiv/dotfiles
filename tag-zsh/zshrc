@@ -4,9 +4,6 @@ export ZSH=/Users/robbie/.oh-my-zsh
 # Set name of the theme to load.
 ZSH_THEME="robburple"
 
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
-
 # Uncomment the following line to display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
 

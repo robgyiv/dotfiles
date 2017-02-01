@@ -13,7 +13,7 @@ alias nbk='cd ~/code/notebooks && jupyter notebook'
 alias nbkc='jupyter notebook'
 
 # useful
-alias cwd='pwd | pbcopy'
+alias cwd="pwd | tr -d '\n' | pbcopy"
 alias bigfolders="du -k ~ | awk '$1 > 50000' | sort -nr"
 alias apprm='mdfind -name $1' # find all files associated with an app
 alias brewup='brew update && brew upgrade'

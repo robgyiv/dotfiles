@@ -7,6 +7,7 @@ alias gnum='git rev-list --all --count'
 # editors
 alias v=nvim
 alias apm-pkg='apm list --installed --bare'
+alias st='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $1'
 
 # notebooks
 alias nbk='cd ~/code/notebooks && jupyter notebook'

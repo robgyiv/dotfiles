@@ -1,7 +1,8 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'https://github.com/rakr/vim-one.git'
+Plug 'rakr/vim-one'
+Plug 'vim-airline/vim-airline'
 
 call plug#end()
 
@@ -24,3 +25,4 @@ endif
 
 set background=dark
 colorscheme one
+let g:airline_theme='one'

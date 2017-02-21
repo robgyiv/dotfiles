@@ -6,7 +6,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
-Plug 'hdima/python-syntax'
+Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 

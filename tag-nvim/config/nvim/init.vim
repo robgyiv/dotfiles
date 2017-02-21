@@ -4,6 +4,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'hdima/python-syntax'
 
 call plug#end()
 
@@ -37,3 +40,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 
 set number
+set list          					" Display unprintable characters f12 - switches
+set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
+let python_highlight_all = 1				" Use https://github.com/hdima/python-syntax

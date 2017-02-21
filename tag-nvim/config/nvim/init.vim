@@ -40,6 +40,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 
 set number
+set relativenumber
 set list          					" Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
-let python_highlight_all = 1				" Use https://github.com/hdima/python-syntax
+

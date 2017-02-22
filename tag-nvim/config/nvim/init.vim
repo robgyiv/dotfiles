@@ -1,3 +1,5 @@
+" Plugins setup
+
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -5,11 +7,22 @@ Plug 'rakr/vim-one'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
+Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
+Plug 'vim-syntastic/syntastic'
 
 call plug#end()
 
+
+" Editor settings
+
+set background=dark
+colorscheme one
+let g:airline_theme='one'
+set number
+set relativenumber
+set list          					" Display unprintable characters f12 - switches
+set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
 "If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
@@ -27,10 +40,10 @@ if (empty($TMUX))
   endif
 endif
 
-set background=dark
-colorscheme one
-let g:airline_theme='one'
 
+" Plugin settings
+
+" NERDTree
 " How can I open a NERDTree automatically when vim starts up if no files were specified?
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
@@ -39,8 +52,34 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " How can I map a specific key or shortcut to open NERDTree?
 map <C-n> :NERDTreeToggle<CR>
 
-set number
-set relativenumber
-set list          					" Display unprintable characters f12 - switches
-set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0<Paste>
+
+" fzy
+function! FzyCommand(choice_command, vim_command)
+  try
+    let output = system(a:choice_command . " | fzy ")
+  catch /Vim:Interrupt/
+    " Swallow errors from ^C, allow redraw! below
+  endtry
+  redraw!
+  if v:shell_error == 0 && !empty(output)
+    exec a:vim_command . ' ' . output
+  endif
+endfunction
+
+" vim-picker
+nmap <unique> <leader>pe <Plug>PickerEdit
+nmap <unique> <leader>ps <Plug>PickerSplit
+nmap <unique> <leader>pt <Plug>PickerTabedit
+nmap <unique> <leader>pv <Plug>PickerVsplit
+nmap <unique> <leader>pb <Plug>PickerBuffer
+nmap <unique> <leader>p] <Plug>PickerTag
+nmap <unique> <leader>ph <Plug>PickerHelp

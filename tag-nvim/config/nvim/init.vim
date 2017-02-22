@@ -11,6 +11,7 @@ Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
 Plug 'airblade/vim-gitgutter'
+Plug 'nathanaelkane/vim-indent-guides'
 
 call plug#end()
 

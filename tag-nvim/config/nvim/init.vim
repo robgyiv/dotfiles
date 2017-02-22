@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-syntastic/syntastic'
+Plug 'airblade/vim-gitgutter'
 
 call plug#end()
 

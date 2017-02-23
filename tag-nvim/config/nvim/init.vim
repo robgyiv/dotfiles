@@ -27,6 +27,7 @@ set relativenumber
 set list          					" Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 let mapleader = "\<Space>"
+let &colorcolumn="80,".join(range(120,999),",")
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

@@ -1,8 +1,6 @@
 [user]
   name = Robbie R
   email = robbie@roygbiv.co.uk
-[init]
-  templatedir = ~/.git_template
 [push]
   default = current
 [color]

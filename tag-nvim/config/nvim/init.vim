@@ -30,14 +30,14 @@ set list          					" Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 let mapleader = "\<Space>"
 let &colorcolumn="80"
+" Open new split panes to right and bottom
+set splitbelow
+set splitright
 " Navigate splits more easily TODO: this isn't working
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
-" Open new split panes to right and bottom
-set splitbelow
-set splitright
 
 "Credit joshdick
 "Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.

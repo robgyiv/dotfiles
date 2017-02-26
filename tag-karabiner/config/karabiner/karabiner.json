@@ -21,7 +21,7 @@
                 "f8": "play_or_pause",
                 "f9": "fastforward"
             },
-            "name": "Default profile",
+            "name": "good",
             "selected": true,
             "simple_modifications": {
                 "caps_lock": "left_control"

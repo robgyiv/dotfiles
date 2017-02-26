@@ -93,10 +93,10 @@ function! FzyCommand(choice_command, vim_command)
 endfunction
 
 " vim-picker
-nmap <unique> <leader>pe <Plug>PickerEdit
-nmap <unique> <leader>ps <Plug>PickerSplit
-nmap <unique> <leader>pt <Plug>PickerTabedit
-nmap <unique> <leader>pv <Plug>PickerVsplit
-nmap <unique> <leader>pb <Plug>PickerBuffer
-nmap <unique> <leader>p] <Plug>PickerTag
-nmap <unique> <leader>ph <Plug>PickerHelp
+nmap <leader>pe <Plug>PickerEdit
+nmap <leader>ps <Plug>PickerSplit
+nmap <leader>pt <Plug>PickerTabedit
+nmap <leader>pv <Plug>PickerVsplit
+nmap <leader>pb <Plug>PickerBuffer
+nmap <leader>p] <Plug>PickerTag
+nmap <leader>ph <Plug>PickerHelp

@@ -31,6 +31,7 @@ set list          					" Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 let mapleader = "\<Space>"
 let &colorcolumn="80"
+set hlsearch
 " Open new split panes to right and bottom
 set splitbelow
 set splitright

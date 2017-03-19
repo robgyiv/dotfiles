@@ -14,7 +14,20 @@ Plug 'airblade/vim-gitgutter'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'Vimjas/vim-python-pep8-indent'
 
+Plug 'roxma/nvim-completion-manager'
+" (optional) javascript completion
+Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'roxma/python-support.nvim'
+" for python completions
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
+" language specific completions on markdown file
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
+
+" utils, optional
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
 
 call plug#end()
 
@@ -32,9 +45,12 @@ set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars map
 let mapleader = "\<Space>"
 let &colorcolumn="80"
 set hlsearch
+set incsearch
 " Open new split panes to right and bottom
 set splitbelow
 set splitright
+" Visual autocomplete for command menu
+set wildmenu
 " Navigate splits more easily TODO: this isn't working
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k

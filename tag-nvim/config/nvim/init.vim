@@ -16,6 +16,7 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-surround'
+Plug 'editorconfig/editorconfig-vim'
 
 Plug 'roxma/nvim-completion-manager'
 " (optional) javascript completion
@@ -88,6 +89,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
+let NERDTreeShowHidden = 1
 
 " Syntastic
 set statusline+=%#warningmsg#

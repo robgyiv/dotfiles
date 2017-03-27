@@ -17,6 +17,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-commentary'
 
 Plug 'roxma/nvim-completion-manager'
 " (optional) javascript completion

@@ -41,6 +41,7 @@ let g:airline_theme='one'
 set number
 set relativenumber
 set cursorline
+set autoread
 set list          					" Display unprintable characters f12 - switches
 set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 let mapleader = "\<Space>"

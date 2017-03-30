@@ -56,28 +56,26 @@ set splitbelow
 set splitright
 " Visual autocomplete for command menu
 set wildmenu
+
+" Mappings
+
 " Navigate splits more easily TODO: this isn't working
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-"Credit joshdick
-"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
-"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
-"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
-if (empty($TMUX))
-  if (has("nvim"))
-  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
-  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-  endif
-  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
-  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
-  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
-  if (has("termguicolors"))
-    set termguicolors
-  endif
-endif
+" vim-picker
+nmap <leader>pe <Plug>PickerEdit
+nmap <leader>ps <Plug>PickerSplit
+nmap <leader>pt <Plug>PickerTabedit
+nmap <leader>pv <Plug>PickerVsplit
+nmap <leader>pb <Plug>PickerBuffer
+nmap <leader>p] <Plug>PickerTag
+nmap <leader>ph <Plug>PickerHelp
+
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
 
 
 " Plugin settings
@@ -89,7 +87,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 " How can I close vim if the only window left open is a NERDTree?
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " How can I map a specific key or shortcut to open NERDTree?
-map <C-n> :NERDTreeToggle<CR>
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
@@ -117,11 +114,20 @@ function! FzyCommand(choice_command, vim_command)
   endif
 endfunction
 
-" vim-picker
-nmap <leader>pe <Plug>PickerEdit
-nmap <leader>ps <Plug>PickerSplit
-nmap <leader>pt <Plug>PickerTabedit
-nmap <leader>pv <Plug>PickerVsplit
-nmap <leader>pb <Plug>PickerBuffer
-nmap <leader>p] <Plug>PickerTag
-nmap <leader>ph <Plug>PickerHelp
+"Credit joshdick
+"Use 24-bit (true-color) mode in Vim/Neovim when outside tmux.
+"If you're using tmux version 2.2 or later, you can remove the outermost $TMUX check and use tmux's 24-bit color support
+"(see < http://sunaku.github.io/tmux-24bit-color.html#usage > for more information.)
+if (empty($TMUX))
+  if (has("nvim"))
+  "For Neovim 0.1.3 and 0.1.4 < https://github.com/neovim/neovim/pull/2198 >
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+  endif
+  "For Neovim > 0.1.5 and Vim > patch 7.4.1799 < https://github.com/vim/vim/commit/61be73bb0f965a895bfb064ea3e55476ac175162 >
+  "Based on Vim patch 7.4.1770 (`guicolors` option) < https://github.com/vim/vim/commit/8a633e3427b47286869aa4b96f2bfc1fe65b25cd >
+  " < https://github.com/neovim/neovim/wiki/Following-HEAD#20160511 >
+  if (has("termguicolors"))
+    set termguicolors
+  endif
+endif
+

@@ -18,6 +18,7 @@ Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-sleuth'
 
 Plug 'roxma/nvim-completion-manager'
 " (optional) javascript completion

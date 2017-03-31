@@ -19,6 +19,7 @@ Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
+Plug 'mattn/emmet-vim'
 
 Plug 'roxma/nvim-completion-manager'
 " (optional) javascript completion

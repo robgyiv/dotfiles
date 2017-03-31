@@ -57,6 +57,7 @@ set splitright
 " Visual autocomplete for command menu
 set wildmenu
 
+
 " Mappings
 
 " Navigate splits more easily TODO: this isn't working
@@ -76,6 +77,12 @@ nmap <leader>ph <Plug>PickerHelp
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+
+" indentLines
+map <leader>ig :IndentLinesToggle<CR>
+let g:indentLine_enabled = 0
+let g:indentLine_color_gui = '#2C323C'
+let g:indentLine_char = '│'
 
 
 " Plugin settings

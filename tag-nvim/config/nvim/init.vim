@@ -57,6 +57,9 @@ set splitbelow
 set splitright
 " Visual autocomplete for command menu
 set wildmenu
+" Show filename in terminal tab: https://askubuntu.com/a/589717
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+set title
 
 
 " Mappings

@@ -23,3 +23,6 @@ alias path='echo $PATH | tr -s ":" "\n"'
 # venv
 alias venv='virtualenv venv -p $1'
 alias avenv='source venv/bin/activate'
+
+# useful commands at work
+alias techguide="echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"

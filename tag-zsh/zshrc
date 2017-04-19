@@ -53,5 +53,8 @@ _load_settings() {
 }
 _load_settings "$HOME/.zsh/configs"
 
+# environment variables
+[[ -f ~/.env ]] && source ~/.env
+
 # aliases
 [[ -f ~/.aliases ]] && source ~/.aliases

@@ -26,3 +26,5 @@ alias avenv='source venv/bin/activate'
 
 # useful commands at work
 alias techguide="echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"
+alias psqlstart="pg_ctl -D /usr/local/var/postgres start"
+alias psqlstop="pg_ctl -D /usr/local/var/postgres stop"

@@ -20,22 +20,8 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'mattn/emmet-vim'
-
-Plug 'roxma/nvim-completion-manager'
-" (optional) javascript completion
-Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-Plug 'roxma/python-support.nvim'
-" for python completions
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
-" language specific completions on markdown file
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
-
-" utils, optional
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
-let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
-
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
-
 
 " Editor settings
 
@@ -60,6 +46,7 @@ set wildmenu
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 set title
+let g:deoplete#enable_at_startup = 1
 
 
 " Mappings

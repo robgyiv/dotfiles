@@ -25,7 +25,7 @@ hs.alert.show("Config loaded")
 
 -- If leaving home, mute then volume when joining new wifi network
 local wifiWatcher = nil
-local homeSSID = os.getenv("HOME_WLAN")
+local homeSSID = os.getenv("WLAN_HOME")
 local lastSSID = hs.wifi.currentNetwork()
 
 function ssidChangedCallback()

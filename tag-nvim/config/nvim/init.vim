@@ -36,7 +36,7 @@ set relativenumber
 set cursorline
 set autoread
 set list          					" Display unprintable characters f12 - switches
-set listchars=tab:•\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
+set listchars=tab:>\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
 let mapleader = "\<Space>"
 let &colorcolumn="80"
 set hlsearch

@@ -22,6 +22,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sophacles/vim-processing'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 call plug#end()
 

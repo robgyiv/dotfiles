@@ -19,7 +19,7 @@ function psetup() {
      sketch=$1;
      mkdir $sketch; touch $sketch/$sketch.pde; cd $sketch;
      curl -fs https://raw.githubusercontent.com/github/gitignore/master/Processing.gitignore -o .gitignore
-     echo "void setup() {\n  size(640, 360);\nframeRate(30);\n}\n\nvoid draw() {\n  background(0);\n}\n" > $sketch.pde
+     echo "void setup() {\n  size(640, 360);\n  frameRate(30);\n}\n\nvoid draw() {\n  background(0);\n}\n" > $sketch.pde
      git init
 }
 

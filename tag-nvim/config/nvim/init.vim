@@ -71,6 +71,7 @@ nmap <leader>ph <Plug>PickerHelp
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<cr>
 
 " indentLines
 map <leader>ig :IndentLinesToggle<CR>

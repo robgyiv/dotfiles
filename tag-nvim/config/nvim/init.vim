@@ -54,7 +54,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Mappings
 
-" Navigate splits more easily TODO: this isn't working
+" Navigate splits more easily
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h

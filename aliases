@@ -19,7 +19,7 @@ alias bigfolders="du -k ~ | awk '$1 > 50000' | sort -nr"
 alias apprm='mdfind -name $1' # find all files associated with an app
 alias brewup='brew update && brew upgrade'
 alias path='echo $PATH | tr -s ":" "\n"'
-alias kwmrs='brew services restart kwm; brew services restart khd'
+alias kwmrs='brew services restart chunkwm; brew services restart khd'
 alias brewcaskup='brew cask list | xargs brew cask reinstall'
 
 # venv

@@ -10,8 +10,8 @@ alt - j : chunkc tiling::window --focus south
 alt - k : chunkc tiling::window --focus north
 alt - l : chunkc tiling::window --focus east
 
-cmd - j : chunkc tiling::window --focus prev
-cmd - k : chunkc tiling::window --focus next
+rcmd - j : chunkc tiling::window --focus prev
+rcmd - k : chunkc tiling::window --focus next
 
 # equalize size of windows
 shift + alt - 0 : chunkc tiling::desktop --equalize
@@ -141,6 +141,6 @@ ctrl + alt - w : chunkc tiling::desktop --deserialize ~/.chunkwm_layouts/dev_1
 - capslock : khd -p "- escape"
 
 # key remap for norwegian layout \ { }
-cmd - 7 : khd -p "shift + alt - 7"
-cmd - 8 : khd -p "shift + alt - 8"
-cmd - 9 : khd -p "shift + alt - 9"
+# cmd - 7 : khd -p "shift + alt - 7"
+# cmd - 8 : khd -p "shift + alt - 8"
+# cmd - 9 : khd -p "shift + alt - 9"

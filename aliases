@@ -21,6 +21,7 @@ alias brewup='brew update && brew upgrade'
 alias path='echo $PATH | tr -s ":" "\n"'
 alias kwmrs='brew services restart chunkwm; brew services restart khd'
 alias brewcaskup='brew cask list | xargs brew cask reinstall'
+alias t=tmux
 
 # venv
 alias venv='virtualenv venv -p $1'

@@ -131,3 +131,7 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+" Use fileame in buffer for tmux tab, reset it on quit
+" Credit https://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim/29693196#29693196
+autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
+autocmd VimLeave * call system("tmux rename-window bash")

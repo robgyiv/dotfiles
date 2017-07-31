@@ -1,6 +1,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/robbie/.oh-my-zsh
 
+# Use Homebrew Python in PATH
+export PATH="/usr/local/opt/python/libexec/bin:$PATH"
+
 # Set name of the theme to load.
 ZSH_THEME="robburple"
 

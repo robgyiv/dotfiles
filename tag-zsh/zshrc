@@ -65,10 +65,6 @@ _load_settings "$HOME/.zsh/configs"
 # various config
 export GEM_HOME=/Users/robbie/.gem
 export PATH="$GEM_HOME/bin:$PATH"
-export DOCKER_TLS_VERIFY="1"
-export DOCKER_HOST="tcp://192.168.99.100:2376"
-export DOCKER_CERT_PATH="/Users/robbie/.docker/machine/machines/default"
-export DOCKER_MACHINE_NAME="default"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"

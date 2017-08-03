@@ -28,29 +28,29 @@ call plug#end()
 
 " Editor settings
 
-set background=dark
+" Show filename in terminal tab: https://askubuntu.com/a/589717
+autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 colorscheme one
+let &colorcolumn="80"
 let g:airline_theme='one'
-set number
-set relativenumber
-set cursorline
+let mapleader = "\<Space>"
 set autoread
+set background=dark
+set cursorline
+set hlsearch
+set ignorecase
+set incsearch
 set list          					" Display unprintable characters f12 - switches
 set listchars=tab:>\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
-let mapleader = "\<Space>"
-let &colorcolumn="80"
-set hlsearch
-set incsearch
+set number
+set relativenumber
 " Open new split panes to right and bottom
 set splitbelow
 set splitright
+set title
 " Visual autocomplete for command menu
 set wildmenu
-" Show filename in terminal tab: https://askubuntu.com/a/589717
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
-set title
 let g:deoplete#enable_at_startup = 1
-
 
 " Mappings
 

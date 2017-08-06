@@ -33,6 +33,7 @@ autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
 colorscheme one
 let &colorcolumn="80"
 let g:airline_theme='one'
+let g:airline_powerline_fonts = 1
 let mapleader = "\<Space>"
 set autoread
 set background=dark

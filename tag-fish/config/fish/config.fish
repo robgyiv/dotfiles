@@ -7,6 +7,9 @@ set green (set_color green)
 set red (set_color red)
 set gray (set_color -o black)
 
+# Remove fish welcome message
+set fish_greeting ''
+
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'

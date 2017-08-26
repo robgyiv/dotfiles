@@ -41,11 +41,13 @@ end
 
 # git
 alias g git
+alias ga 'git add'
 alias gb 'git branch'
 alias gbv 'git branch -v'
 alias gc 'git commit -v'
 alias gca 'git commit -av'
 alias gco 'git checkout'
+alias gd 'git diff'
 alias gida "git config user.email 'robbie@asidatascience.com'"
 alias gidr "git config user.email 'robbie@roygbiv.co.uk'"
 alias gl 'git pull'

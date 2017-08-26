@@ -1,3 +1,5 @@
+set -x EDITOR nvim
+
 # Prompt
 
 set normal (set_color normal)

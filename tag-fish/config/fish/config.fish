@@ -1,6 +1,8 @@
 # Remove fish welcome message
 set fish_greeting
 
+set -x EDITOR nvim
+
 # Aliases
 
 # git

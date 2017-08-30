@@ -2,6 +2,7 @@
 set fish_greeting
 
 set -x EDITOR nvim
+set PATH /usr/local/opt/python/libexec/bin $PATH # Use Homebrew Python
 
 # Aliases
 
@@ -43,7 +44,7 @@ alias t tmux
 
 # venv
 alias avenv 'source venv/bin/activate'
-alias venv 'virtualenv venv -p $argv'
+alias venv 'virtualenv venv -p $argv[1]'
 
 # useful commands at work
 alias psqlstart "pg_ctl -D /usr/local/var/postgres start"

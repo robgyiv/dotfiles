@@ -25,7 +25,7 @@ abbr gst 'git status'
 
 # editors
 alias st '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv'
-alias v nvim
+abbr v nvim
 
 # notebooks
 alias nbk 'cd ~/code/notebooks; jupyter notebook'
@@ -40,7 +40,7 @@ alias cwd "pwd | tr -d '\n' | pbcopy"
 alias kwmrs 'brew services restart chunkwm; brew services restart khd'
 alias l 'ls -al'
 alias path 'echo $PATH | tr -s ":" "\n"'
-alias t tmux
+abbr t tmux
 
 # venv
 alias avenv 'source venv/bin/activate'

@@ -3,7 +3,7 @@ set magenta (set_color magenta)
 set yellow (set_color yellow)
 set green (set_color green)
 set red (set_color red)
-set gray (set_color -o black)
+set foobar (set_color 333333)
 
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
@@ -35,5 +35,7 @@ function fish_prompt
 end
 
 function fish_right_prompt
+  set_color 495262
   date '+%H:%M:%S'
+  set_color normal
 end

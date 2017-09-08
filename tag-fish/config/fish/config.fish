@@ -7,21 +7,21 @@ set PATH /usr/local/opt/python/libexec/bin $PATH # Use Homebrew Python
 # Aliases
 
 # git
-alias g git
-alias ga 'git add'
-alias gb 'git branch'
-alias gbv 'git branch -v'
-alias gc 'git commit -v'
-alias gca 'git commit -av'
-alias gco 'git checkout'
-alias gd 'git diff'
-alias gida "git config user.email 'robbie@asidatascience.com'"
-alias gidr "git config user.email 'robbie@roygbiv.co.uk'"
-alias gl 'git pull'
-alias gnum 'git rev-list --all --count'
-alias gp 'git push'
-alias grv 'git remote -v'
-alias gst 'git status'
+abbr g git
+abbr ga 'git add'
+abbr gb 'git branch'
+abbr gbv 'git branch -v'
+abbr gc 'git commit -v'
+abbr gca 'git commit -av'
+abbr gco 'git checkout'
+abbr gd 'git diff'
+abbr gida "git config user.email 'robbie@asidatascience.com'"
+abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
+abbr gl 'git pull'
+abbr gnum 'git rev-list --all --count'
+abbr gp 'git push'
+abbr grv 'git remote -v'
+abbr gst 'git status'
 
 # editors
 alias st '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv'

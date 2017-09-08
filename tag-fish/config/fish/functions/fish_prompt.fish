@@ -33,3 +33,7 @@ function fish_prompt
 
   set_color normal
 end
+
+function fish_right_prompt
+  date '+%H:%M:%S'
+end

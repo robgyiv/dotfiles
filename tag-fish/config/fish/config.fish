@@ -15,6 +15,7 @@ abbr gc 'git commit -v'
 abbr gca 'git commit -av'
 abbr gco 'git checkout'
 abbr gd 'git diff'
+abbr gf 'git fetch'
 abbr gida "git config user.email 'robbie@asidatascience.com'"
 abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
 abbr gl 'git pull'

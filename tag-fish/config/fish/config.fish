@@ -19,8 +19,10 @@ abbr gf 'git fetch'
 abbr gida "git config user.email 'robbie@asidatascience.com'"
 abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
 abbr gl 'git pull'
+abbr glom 'git pull origin master'
 abbr gnum 'git rev-list --all --count'
 abbr gp 'git push'
+abbr gpom 'git push origin master'
 abbr grv 'git remote -v'
 abbr gst 'git status'
 

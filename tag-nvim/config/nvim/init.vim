@@ -29,7 +29,7 @@ call plug#end()
 " Editor settings
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
-autocmd BufEnter * let &titlestring = ' ' . expand("%:t")
+autocmd BufEnter * let &titlestring = '' . expand("%:t")
 colorscheme one
 let &colorcolumn="80"
 let g:airline_theme='one'

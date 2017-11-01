@@ -44,6 +44,7 @@ alias kwmrs 'brew services restart chunkwm; brew services restart khd'
 alias l 'ls -al'
 alias path 'echo $PATH | tr -s ":" "\n"'
 abbr t tmux
+abbr pipr 'pip install -r requirements.txt'
 
 # venv
 alias avenv 'source venv/bin/activate'

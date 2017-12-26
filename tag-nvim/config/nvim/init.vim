@@ -23,6 +23,7 @@ Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sophacles/vim-processing'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'supercollider/scvim'
 
 call plug#end()
 

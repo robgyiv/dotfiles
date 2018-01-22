@@ -35,6 +35,7 @@ colorscheme one
 let &colorcolumn="80"
 let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 let mapleader = "\<Space>"
 set autoread
 set background=dark
@@ -136,4 +137,4 @@ endif
 " Use fileame in buffer for tmux tab, reset it on quit
 " Credit https://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim/29693196#29693196
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
-autocmd VimLeave * call system("tmux rename-window bash")
+autocmd VimLeave * call system("tmux rename-window fish")

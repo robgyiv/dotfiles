@@ -1,0 +1,14 @@
+{
+    // Controls the font size in pixels.
+    "editor.fontSize": 14,
+  
+    // Controls the font family.
+    "editor.fontFamily": "Hack",
+    "editor.rulers": [79],
+    "editor.lineNumbers": "relative",
+    "editor.renderWhitespace": "boundary",
+    "vim.hlsearch": true,
+    "workbench.colorTheme": "One Dark Pro",
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false
+}

@@ -31,26 +31,26 @@ alias st '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv'
 abbr v nvim
 
 # notebooks
-alias nbk 'cd ~/code/notebooks; jupyter notebook'
-alias nbkc 'jupyter notebook'
+abbr nbk 'cd ~/code/notebooks; jupyter notebook'
+abbr nbkc 'jupyter notebook'
 
 # useful
+abbr brewcaskup 'brew cask list; xargs brew cask reinstall'
+abbr brewup 'brew update; brew upgrade'
+abbr kwmrs 'brew services restart chunkwm; brew services restart khd'
+abbr l 'ls -al'
+abbr pipr 'pip install -r requirements.txt'
+abbr t tmux
 alias apprm 'mdfind -name $argv' # find all files associated with an app
 alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
-alias brewcaskup 'brew cask list | xargs brew cask reinstall'
-alias brewup 'brew update; brew upgrade'
 alias cwd "pwd | tr -d '\n' | pbcopy"
-alias kwmrs 'brew services restart chunkwm; brew services restart khd'
-alias l 'ls -al'
 alias path 'echo $PATH | tr -s ":" "\n"'
-abbr t tmux
-abbr pipr 'pip install -r requirements.txt'
 
 # venv
-alias avenv 'source venv/bin/activate'
-alias venv 'virtualenv venv -p $argv[1]'
+abbr avenv 'source venv/bin/activate'
+abbr venv 'virtualenv venv -p $argv[1]'
 
 # useful commands at work
-alias psqlstart "pg_ctl -D /usr/local/var/postgres start"
-alias psqlstop "pg_ctl -D /usr/local/var/postgres stop"
+abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"
+abbr psqlstop "pg_ctl -D /usr/local/var/postgres stop"
 alias techguide "echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"

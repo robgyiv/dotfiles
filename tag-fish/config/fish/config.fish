@@ -2,7 +2,6 @@
 set fish_greeting
 
 set -x EDITOR nvim
-set PATH /usr/local/opt/python/libexec/bin $PATH # Use Homebrew Python
 
 # Aliases
 

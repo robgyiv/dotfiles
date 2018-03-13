@@ -9,7 +9,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-syntastic/syntastic'
+Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
@@ -22,8 +22,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'sophacles/vim-processing'
-Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'supercollider/scvim'
+Plug 'liuchengxu/space-vim-dark'
 
 call plug#end()
 
@@ -31,7 +31,7 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme one
+colorscheme space-vim-dark
 let &colorcolumn="79"
 let g:airline_theme='one'
 let g:airline_powerline_fonts = 1
@@ -95,16 +95,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeShowHidden = 1
-
-" Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 2
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 
 " fzy
 function! FzyCommand(choice_command, vim_command)

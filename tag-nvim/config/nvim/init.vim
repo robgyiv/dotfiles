@@ -10,8 +10,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'airblade/vim-gitgutter'
-Plug 'Yggdroot/indentLine'
+" Plug 'airblade/vim-gitgutter'
+" Plug 'Yggdroot/indentLine'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -19,10 +19,10 @@ Plug 'tpope/vim-surround'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'sophacles/vim-processing'
-Plug 'supercollider/scvim'
+" Plug 'sophacles/vim-processing'
+" Plug 'supercollider/scvim'
 Plug 'liuchengxu/space-vim-dark'
 
 call plug#end()
@@ -31,6 +31,8 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
+" colorscheme one
+" colorscheme bdconry
 colorscheme space-vim-dark
 let &colorcolumn="79"
 let g:airline_theme='one'

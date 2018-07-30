@@ -33,7 +33,7 @@ function fish_prompt
 
   set_color normal
 
-  printf '$ '
+  printf ' $ '
 end
 
 function fish_right_prompt

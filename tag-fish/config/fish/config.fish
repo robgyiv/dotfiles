@@ -53,3 +53,4 @@ abbr venv 'virtualenv venv -p $argv[1]'
 abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"
 abbr psqlstop "pg_ctl -D /usr/local/var/postgres stop"
 alias techguide "echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"
+

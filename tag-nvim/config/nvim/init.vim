@@ -26,9 +26,10 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme one
-let &colorcolumn="79"
-let g:airline_theme='one'
+let &colorcolumn="80"
+set cursorline
+colorscheme space-vim-dark
+let g:airline_theme='violet'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let mapleader = "\<Space>"

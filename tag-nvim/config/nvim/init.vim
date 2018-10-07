@@ -29,6 +29,7 @@ call plug#end()
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
 colorscheme spacemacs-theme
 let &colorcolumn="80"
+set cursorline
 let g:airline_theme='violet'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1

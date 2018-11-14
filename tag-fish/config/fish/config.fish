@@ -37,7 +37,7 @@ abbr nbkc 'jupyter notebook'
 abbr brewcaskup 'brew cask list; xargs brew cask reinstall'
 abbr brewup 'brew update; brew upgrade'
 abbr kwmrs 'brew services restart chunkwm; brew services restart khd'
-abbr l 'ls -al'
+abbr l 'ls -alh'
 abbr pipr 'pip install -r requirements.txt'
 abbr t tmux
 alias apprm 'mdfind -name $argv' # find all files associated with an app

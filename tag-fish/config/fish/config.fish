@@ -44,6 +44,7 @@ alias apprm 'mdfind -name $argv' # find all files associated with an app
 alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
 alias cwd "pwd | tr -d '\n' | pbcopy"
 alias path 'echo $PATH | tr -s ":" "\n"'
+alias macsleep "pmset displaysleepnow"
 
 # venv
 abbr avenv 'source venv/bin/activate'

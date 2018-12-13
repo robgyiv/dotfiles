@@ -26,6 +26,7 @@ abbr grv 'git remote -v'
 abbr gst 'git status'
 
 # editors
+abbr e emacs -nw
 alias st '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv'
 abbr v nvim
 
@@ -54,4 +55,3 @@ abbr venv 'virtualenv venv -p $argv[1]'
 abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"
 abbr psqlstop "pg_ctl -D /usr/local/var/postgres stop"
 alias techguide "echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"
-

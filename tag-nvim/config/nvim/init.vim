@@ -51,6 +51,7 @@ set title
 " Visual autocomplete for command menu
 set wildmenu
 let g:deoplete#enable_at_startup = 1
+set clipboard=unnamed
 
 " Mappings
 

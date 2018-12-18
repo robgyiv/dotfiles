@@ -51,6 +51,9 @@ alias macsleep "pmset displaysleepnow"
 abbr avenv 'source venv/bin/activate'
 abbr venv 'virtualenv venv -p $argv[1]'
 
+# pyenv
+source (pyenv init - | psub)
+
 # useful commands at work
 abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"
 abbr psqlstop "pg_ctl -D /usr/local/var/postgres stop"

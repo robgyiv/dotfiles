@@ -115,3 +115,7 @@ endif
 " Credit https://stackoverflow.com/questions/15123477/tmux-tabs-with-name-of-file-open-in-vim/29693196#29693196
 autocmd BufEnter * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window fish")
+
+" pyenv
+let g:python_host_prog = '/Users/robbie/.pyenv/versions/neovim2/bin/python'
+let g:python3_host_prog = '/Users/robbie/.pyenv/versions/neovim3/bin/python'

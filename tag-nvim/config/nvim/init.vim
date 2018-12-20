@@ -53,6 +53,9 @@ set wildmenu
 let g:deoplete#enable_at_startup = 1
 set clipboard=unnamed
 
+" Edit crontab with vim
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 " Mappings
 
 " Navigate splits more easily

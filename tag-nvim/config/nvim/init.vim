@@ -20,6 +20,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'colepeters/spacemacs-theme.vim'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 
@@ -52,6 +53,8 @@ set title
 set wildmenu
 let g:deoplete#enable_at_startup = 1
 set clipboard=unnamed
+let g:neoformat_enabled_python = ['black']
+let g:neoformat_enabled_javascript = ['prettier']
 
 " Edit crontab with vim
 autocmd filetype crontab setlocal nobackup nowritebackup
@@ -82,6 +85,9 @@ map <leader>ig :IndentLinesToggle<CR>
 let g:indentLine_enabled = 0
 let g:indentLine_color_gui = '#2C323C'
 let g:indentLine_char = '│'
+
+" Neoformat
+map <leader>af :Neoformat<CR>
 
 
 " Plugin settings

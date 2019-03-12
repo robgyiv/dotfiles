@@ -53,6 +53,8 @@ abbr venv 'virtualenv venv -p $argv[1]'
 
 # pyenv
 source (pyenv init - | psub)
+status --is-interactive; and pyenv init - | source
+status --is-interactive; and pyenv virtualenv-init - | source
 
 # useful commands at work
 abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"

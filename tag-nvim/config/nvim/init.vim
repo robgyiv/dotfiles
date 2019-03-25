@@ -4,7 +4,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
@@ -21,6 +20,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'colepeters/spacemacs-theme.vim'
 Plug 'sbdchd/neoformat'
+Plug 'mcchrish/nnn.vim'
 
 call plug#end()
 
@@ -76,9 +76,9 @@ nmap <leader>pb <Plug>PickerBuffer
 nmap <leader>p] <Plug>PickerTag
 nmap <leader>ph <Plug>PickerHelp
 
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
-map <leader>nf :NERDTreeFind<cr>
+" nnn
+" let g:nnn#layout = 'new' " or vnew, tabnew etc.
+let g:nnn#layout = { 'left': '~20%' } "
 
 " indentLines
 map <leader>ig :IndentLinesToggle<CR>
@@ -91,17 +91,6 @@ map <leader>af :Neoformat<CR>
 
 
 " Plugin settings
-
-" NERDTree
-" How can I open a NERDTree automatically when vim starts up if no files were specified?
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-" How can I close vim if the only window left open is a NERDTree?
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" How can I map a specific key or shortcut to open NERDTree?
-let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
-let NERDTreeShowHidden = 1
 
 " fzy
 function! FzyCommand(choice_command, vim_command)

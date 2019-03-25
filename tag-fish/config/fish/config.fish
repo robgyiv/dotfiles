@@ -24,6 +24,7 @@ abbr gp 'git push'
 abbr gpom 'git push origin master'
 abbr grv 'git remote -v'
 abbr gst 'git status'
+abbr n 'nnn'
 
 # editors
 abbr e emacs -nw

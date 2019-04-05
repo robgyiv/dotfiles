@@ -18,7 +18,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'liuchengxu/space-vim-dark'
-Plug 'colepeters/spacemacs-theme.vim'
 Plug 'sbdchd/neoformat'
 Plug 'mcchrish/nnn.vim'
 

@@ -3,7 +3,7 @@
 " Specify a directory for plugins (for Neovim: ~/.local/share/nvim/plugged)
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
@@ -29,11 +29,11 @@ call plug#end()
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
 colorscheme space-vim-dark
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
 let &colorcolumn="80"
 set cursorline
-let g:airline_theme='violet'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
 let mapleader = "\<Space>"
 set autoread
 set background=dark

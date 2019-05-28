@@ -20,6 +20,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'liuchengxu/space-vim-dark'
 Plug 'sbdchd/neoformat'
 Plug 'mcchrish/nnn.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
 
@@ -27,9 +28,9 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme space-vim-dark
+colorscheme nord
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'nord',
       \ }
 let &colorcolumn="80"
 set cursorline
@@ -40,8 +41,10 @@ set cursorline
 set hlsearch
 set ignorecase
 set incsearch
-set list          					" Display unprintable characters f12 - switches
-set listchars=tab:>\ ,trail:•,extends:»,precedes:«	" Unprintable chars mapping
+" Display unprintable characters f12 - switches
+set list
+" Unprintable chars mapping
+set listchars=tab:>\ ,trail:•,extends:»,precedes:«
 set number
 set relativenumber
 " Open new split panes to right and bottom

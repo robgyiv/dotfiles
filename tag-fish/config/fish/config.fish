@@ -3,6 +3,9 @@ set fish_greeting
 
 set -x EDITOR nvim
 
+set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
+set -gx PKG_CONFIG_PATH "/usr/local/opt/libffi/lib/pkgconfig"
+
 # Aliases
 
 # git
@@ -25,6 +28,7 @@ abbr gpom 'git push origin master'
 abbr grv 'git remote -v'
 abbr gst 'git status'
 abbr n 'nnn'
+abbr nvmd 'nvm use default'
 
 # editors
 abbr e emacs -nw

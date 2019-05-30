@@ -81,6 +81,7 @@ nmap <leader>ph <Plug>PickerHelp
 " nnn
 " let g:nnn#layout = 'new' " or vnew, tabnew etc.
 let g:nnn#layout = { 'left': '~20%' } "
+let g:nnn#command = 'nnn -ld'
 nnoremap <leader>n :execute "NnnPicker " . expand("%:p:h")<CR>
 let g:nnn#action = {
       \ '<c-t>': 'tab split',

@@ -21,6 +21,7 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'sbdchd/neoformat'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()
 
@@ -28,9 +29,9 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme nord
+colorscheme onehalfdark
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'onehalfdark',
       \ }
 let &colorcolumn="80"
 set cursorline
@@ -41,6 +42,7 @@ set cursorline
 set hlsearch
 set ignorecase
 set incsearch
+set lazyredraw
 " Display unprintable characters f12 - switches
 set list
 " Unprintable chars mapping

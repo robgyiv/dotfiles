@@ -29,7 +29,7 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme onehalfdark
+colorscheme space-vim-dark
 let g:lightline = {
       \ 'colorscheme': 'onehalfdark',
       \ }

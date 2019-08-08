@@ -62,6 +62,4 @@ status --is-interactive; and pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 
 # useful commands at work
-abbr psqlstart "pg_ctl -D /usr/local/var/postgres start"
-abbr psqlstop "pg_ctl -D /usr/local/var/postgres stop"
-alias techguide "echo $TECH_GUIDEBOOK_DOC | tr -d '\n' | pbcopy"
+abbr ytuw 'yarn test:unit:watch'

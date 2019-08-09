@@ -1,0 +1,20 @@
+session_name: platform
+windows:
+- window_name: server
+  layout: even-horizontal
+  shell_command_before:
+    - nvmd                     # run as a first command in all panes
+  panes:
+    - shell_command:           # pane no. 1
+        - redis-server
+    - shell_command:           # pane no. 1
+        - yarn dev-client
+    - shell_command:           # pane no. 1
+        - yarn dev:watch
+- window_name: dev
+  layout: even-horizontal
+  shell_command_before:
+    - nvmd
+  panes:
+    - ''
+    - ''

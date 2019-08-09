@@ -20,6 +20,7 @@ Plug 'liuchengxu/space-vim-dark'
 Plug 'sbdchd/neoformat'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
+Plug 'sonph/onehalf', {'rtp': 'vim/'}
 
 call plug#end()
 
@@ -27,9 +28,9 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme nord
+colorscheme space-vim-dark
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'onehalfdark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -47,6 +48,7 @@ set cursorline
 set hlsearch
 set ignorecase
 set incsearch
+set lazyredraw
 " Display unprintable characters f12 - switches
 set list
 " Unprintable chars mapping
@@ -87,7 +89,7 @@ nmap <leader>ph <Plug>PickerHelp
 " nnn
 " let g:nnn#layout = 'new' " or vnew, tabnew etc.
 let g:nnn#layout = { 'left': '~20%' } "
-let g:nnn#command = 'nnn -ld'
+let g:nnn#command = 'nnn -H'
 nnoremap <leader>n :execute "NnnPicker " . expand("%:p:h")<CR>
 let g:nnn#action = {
       \ '<c-t>': 'tab split',

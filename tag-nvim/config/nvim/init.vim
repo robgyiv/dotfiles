@@ -4,7 +4,6 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-fugitive'
 Plug 'srstevenson/vim-picker'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
@@ -31,6 +30,13 @@ autocmd BufEnter * let &titlestring = '' . expand("%:t")
 colorscheme nord
 let g:lightline = {
       \ 'colorscheme': 'nord',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'fugitive#head'
+      \ },
       \ }
 let &colorcolumn="80"
 set cursorline
@@ -56,7 +62,7 @@ set wildmenu
 let g:deoplete#enable_at_startup = 1
 set clipboard=unnamed
 let g:neoformat_enabled_python = ['black']
-let g:neoformat_enabled_javascript = ['prettier']
+let g:neoformat_enabled_javascript = ['prettier-eslint']
 
 " Edit crontab with vim
 autocmd filetype crontab setlocal nobackup nowritebackup
@@ -125,3 +131,7 @@ autocmd VimLeave * call system("tmux rename-window fish")
 " pyenv
 let g:python_host_prog = '/Users/robbie/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/robbie/.pyenv/versions/neovim3/bin/python'
+
+" ale
+let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_fix_on_save = 1

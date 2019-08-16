@@ -21,6 +21,7 @@ Plug 'sbdchd/neoformat'
 Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
+Plug 'sophacles/vim-processing'
 
 call plug#end()
 

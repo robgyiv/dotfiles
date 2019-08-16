@@ -3,13 +3,13 @@ windows:
 - window_name: server
   layout: even-horizontal
   shell_command_before:
-    - nvmd                     # run as a first command in all panes
+    - nvm use default
   panes:
-    - shell_command:           # pane no. 1
+    - shell_command:
         - redis-server
-    - shell_command:           # pane no. 1
+    - shell_command:
         - yarn dev-client
-    - shell_command:           # pane no. 1
+    - shell_command:
         - yarn dev:watch
 - window_name: dev
   layout: even-horizontal

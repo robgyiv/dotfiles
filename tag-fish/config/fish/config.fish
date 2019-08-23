@@ -63,3 +63,5 @@ status --is-interactive; and pyenv virtualenv-init - | source
 
 # useful commands at work
 abbr ytuw 'yarn test:unit:watch'
+abbr ydc 'yarn dev-client'
+abbr ydw 'yarn dev:watch'

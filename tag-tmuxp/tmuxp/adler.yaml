@@ -1,0 +1,10 @@
+session_name: adler
+windows:
+- window_name: storybook
+  layout: even-horizontal
+  shell_command_before:
+    - nvm use default
+  panes:
+    - shell_command:
+        - yarn start-storybook -p 6006 -s build -c .storybook
+    - ''

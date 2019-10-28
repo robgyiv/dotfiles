@@ -1,0 +1,10 @@
+session_name: adler-ui
+windows:
+- window_name: styleguide
+  layout: even-horizontal
+  shell_command_before:
+    - nvm use default
+  panes:
+    - shell_command:
+        - yarn styleguide
+    - ''

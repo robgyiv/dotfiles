@@ -70,6 +70,8 @@ let g:neoformat_enabled_javascript = ['prettier-eslint']
 " Edit crontab with vim
 autocmd filetype crontab setlocal nobackup nowritebackup
 
+au BufReadPost *.pde set syntax=java
+
 " Mappings
 
 " Navigate splits more easily

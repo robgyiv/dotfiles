@@ -111,6 +111,9 @@ let g:indentLine_char = '│'
 " Neoformat
 map <leader>af :Neoformat<CR>
 
+" defx
+nnoremap <leader>n :execute "Defx " . expand("%:p:h")<CR>
+
 " Plugin settings
 
 " vim-vinegar

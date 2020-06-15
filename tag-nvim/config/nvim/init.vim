@@ -16,12 +16,22 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'liuchengxu/space-vim-dark'
+Plug 'liuchengxu/space-vim-theme'
 Plug 'sbdchd/neoformat'
-Plug 'mcchrish/nnn.vim'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'sophacles/vim-processing'
+Plug 'tpope/vim-vinegar'
+Plug 'jaredgorski/spacecamp'
+Plug 'yuttie/hydrangea-vim'
+Plug 'christophermca/meta5'
+if has('nvim')
+  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/defx.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
 call plug#end()
 
@@ -29,7 +39,7 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme space-vim-dark
+colorscheme space_vim_theme
 let g:lightline = {
       \ 'colorscheme': 'onehalfdark',
       \ 'active': {
@@ -69,6 +79,9 @@ let g:neoformat_enabled_javascript = ['prettier-eslint']
 
 " Edit crontab with vim
 autocmd filetype crontab setlocal nobackup nowritebackup
+" Set filetype for Python Processing files
+au BufRead,BufNewFile *.pyde set filetype=python
+au BufRead,BufNewFile *.pde set filetype=java shiftwidth=2 softtabstop=2 expandtab
 
 " Mappings
 
@@ -87,21 +100,31 @@ nmap <leader>pb <Plug>PickerBuffer
 nmap <leader>p] <Plug>PickerTag
 nmap <leader>ph <Plug>PickerHelp
 
+nnoremap <leader>n :execute "Defx " . expand("%:p:h")<CR>
+
 " nnn
 " let g:nnn#layout = 'new' " or vnew, tabnew etc.
-let g:nnn#layout = { 'left': '~20%' } "
-let g:nnn#command = 'nnn -H'
-nnoremap <leader>n :execute "NnnPicker " . expand("%:p:h")<CR>
-let g:nnn#action = {
-      \ '<c-t>': 'tab split',
-      \ '<c-x>': 'split',
-      \ '<c-v>': 'vsplit' }
+" let g:nnn#layout = { 'left': '~20%' } "
+" let g:nnn#command = 'nnn -H'
+" " nnoremap <leader>n :execute "NnnPicker " . expand("%:p:h")<CR>
+" let g:nnn#action = {
+"       \ '<c-t>': 'tab split',
+"       \ '<c-x>': 'split',
+"       \ '<c-v>': 'vsplit' }
 
-" indentLines
-map <leader>ig :IndentLinesToggle<CR>
-let g:indentLine_enabled = 0
-let g:indentLine_color_gui = '#2C323C'
-let g:indentLine_char = '│'
+" " indentLines
+" map <leader>ig :IndentLinesToggle<CR>
+" let g:indentLine_enabled = 0
+" let g:indentLine_color_gui = '#2C323C'
+" let g:indentLine_char = '│'
+
+" vimfiler
+" let g:vimfiler_as_default_explorer = 1
+" nnoremap <leader>n :VimFiler
+
+" netrw
+" tree view
+" let g:netrw_liststyle = 3
 
 " Neoformat
 map <leader>af :Neoformat<CR>
@@ -138,3 +161,4 @@ let g:python3_host_prog = '/Users/robbie/.pyenv/versions/neovim3/bin/python'
 " ale
 let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
 let g:ale_fix_on_save = 1
+let g:ale_linters = {'javascript': ['eslint', 'flow']}

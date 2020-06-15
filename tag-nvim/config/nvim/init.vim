@@ -18,11 +18,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'liuchengxu/space-vim-theme'
 Plug 'sbdchd/neoformat'
-Plug 'arcticicestudio/nord-vim'
-Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'sophacles/vim-processing'
 Plug 'tpope/vim-vinegar'
-Plug 'jaredgorski/spacecamp'
 Plug 'yuttie/hydrangea-vim'
 Plug 'christophermca/meta5'
 if has('nvim')
@@ -32,6 +29,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'haishanh/night-owl.vim'
 
 call plug#end()
 
@@ -39,9 +37,9 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme space_vim_theme
+colorscheme night-owl
 let g:lightline = {
-      \ 'colorscheme': 'onehalfdark',
+      \ 'colorscheme': 'nightowl',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
@@ -83,6 +81,8 @@ autocmd filetype crontab setlocal nobackup nowritebackup
 au BufRead,BufNewFile *.pyde set filetype=python
 au BufRead,BufNewFile *.pde set filetype=java shiftwidth=2 softtabstop=2 expandtab
 
+au BufReadPost *.pde set syntax=java
+
 " Mappings
 
 " Navigate splits more easily
@@ -92,45 +92,29 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
 " vim-picker
-nmap <leader>pe <Plug>PickerEdit
-nmap <leader>ps <Plug>PickerSplit
-nmap <leader>pt <Plug>PickerTabedit
-nmap <leader>pv <Plug>PickerVsplit
-nmap <leader>pb <Plug>PickerBuffer
-nmap <leader>p] <Plug>PickerTag
-nmap <leader>ph <Plug>PickerHelp
+nmap <unique> <leader>pe <Plug>(PickerEdit)
+nmap <unique> <leader>ps <Plug>(PickerSplit)
+nmap <unique> <leader>pt <Plug>(PickerTabedit)
+nmap <unique> <leader>pv <Plug>(PickerVsplit)
+nmap <unique> <leader>pb <Plug>(PickerBuffer)
+nmap <unique> <leader>p] <Plug>(PickerTag)
+nmap <unique> <leader>pw <Plug>(PickerStag)
+nmap <unique> <leader>po <Plug>(PickerBufferTag)
+nmap <unique> <leader>ph <Plug>(PickerHelp)
 
-nnoremap <leader>n :execute "Defx " . expand("%:p:h")<CR>
-
-" nnn
-" let g:nnn#layout = 'new' " or vnew, tabnew etc.
-" let g:nnn#layout = { 'left': '~20%' } "
-" let g:nnn#command = 'nnn -H'
-" " nnoremap <leader>n :execute "NnnPicker " . expand("%:p:h")<CR>
-" let g:nnn#action = {
-"       \ '<c-t>': 'tab split',
-"       \ '<c-x>': 'split',
-"       \ '<c-v>': 'vsplit' }
-
-" " indentLines
-" map <leader>ig :IndentLinesToggle<CR>
-" let g:indentLine_enabled = 0
-" let g:indentLine_color_gui = '#2C323C'
-" let g:indentLine_char = '│'
-
-" vimfiler
-" let g:vimfiler_as_default_explorer = 1
-" nnoremap <leader>n :VimFiler
-
-" netrw
-" tree view
-" let g:netrw_liststyle = 3
+" indentLines
+map <leader>ig :IndentLinesToggle<CR>
+let g:indentLine_enabled = 0
+let g:indentLine_color_gui = '#2C323C'
+let g:indentLine_char = '│'
 
 " Neoformat
 map <leader>af :Neoformat<CR>
 
-
 " Plugin settings
+
+" vim-vinegar
+let g:netrw_liststyle = 3
 
 " fzy
 function! FzyCommand(choice_command, vim_command)

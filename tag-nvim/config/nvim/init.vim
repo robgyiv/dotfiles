@@ -30,6 +30,7 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'haishanh/night-owl.vim'
+Plug 'jeffkreeftmeijer/vim-dim'
 
 call plug#end()
 
@@ -37,7 +38,7 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme night-owl
+colorscheme hydrangea
 let g:lightline = {
       \ 'colorscheme': 'nightowl',
       \ 'active': {

@@ -6,7 +6,7 @@ windows:
     - nvm use default
   panes:
     - shell_command:
-        - redis-server
+        - redis-server ~/.config/redis/redis.conf
     - shell_command:
         - yarn dev-client
     - shell_command:
@@ -14,7 +14,7 @@ windows:
 - window_name: dev
   layout: even-horizontal
   shell_command_before:
-    - nvmd
+    - nvm use default
   panes:
     - ''
     - ''

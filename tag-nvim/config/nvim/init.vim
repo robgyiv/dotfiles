@@ -31,6 +31,7 @@ else
 endif
 Plug 'haishanh/night-owl.vim'
 Plug 'jeffkreeftmeijer/vim-dim'
+Plug 'bluz71/vim-moonfly-colors'
 
 call plug#end()
 
@@ -38,9 +39,9 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme hydrangea
+colorscheme moonfly
 let g:lightline = {
-      \ 'colorscheme': 'nightowl',
+      \ 'colorscheme': 'moonfly',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

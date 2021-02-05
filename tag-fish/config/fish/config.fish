@@ -3,8 +3,8 @@ set fish_greeting
 
 set -x EDITOR nvim
 
-set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
 set -gx PKG_CONFIG_PATH "/usr/local/opt/libffi/lib/pkgconfig"
+set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
 
 # Aliases
 
@@ -18,6 +18,7 @@ abbr gca 'git commit -av'
 abbr gco 'git checkout'
 abbr gd 'git diff'
 abbr gf 'git fetch'
+abbr gfo 'git fetch origin'
 abbr gida "git config user.email 'robbie@asidatascience.com'"
 abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
 abbr gl 'git pull'
@@ -27,7 +28,7 @@ abbr gp 'git push'
 abbr gpom 'git push origin master'
 abbr grv 'git remote -v'
 abbr gst 'git status'
-abbr n 'nnn'
+abbr gfopm 'git fetch origin; git pull origin master'
 abbr nvmd 'nvm use default'
 
 # editors
@@ -65,3 +66,11 @@ status --is-interactive; and pyenv virtualenv-init - | source
 abbr ytuw 'yarn test:unit:watch'
 abbr ydc 'yarn dev-client'
 abbr ydw 'yarn dev:watch'
+
+source /Users/robbie/Library/Preferences/org.dystroy.broot/launcher/fish/br
+
+# starship
+# starship init fish | source
+
+# asdf
+source /usr/local/opt/asdf/asdf.fish

@@ -4,7 +4,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'itchyny/lightline.vim'
-Plug 'srstevenson/vim-picker'
+Plug 'srstevenson/vim-picker', { 'branch': 'main' }
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
@@ -30,8 +30,8 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'haishanh/night-owl.vim'
-Plug 'jeffkreeftmeijer/vim-dim'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'bluz71/vim-nightfly-guicolors'
 
 call plug#end()
 
@@ -39,9 +39,10 @@ call plug#end()
 
 " Show filename in terminal tab: https://askubuntu.com/a/589717
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
-colorscheme moonfly
+set termguicolors
+colorscheme space_vim_theme
 let g:lightline = {
-      \ 'colorscheme': 'moonfly',
+      \ 'colorscheme': 'one',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]

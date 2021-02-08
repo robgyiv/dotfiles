@@ -2,8 +2,6 @@ session_name: platform
 windows:
 - window_name: server
   layout: even-horizontal
-  shell_command_before:
-    - nvm use default
   panes:
     - shell_command:
         - redis-server ~/.config/redis/redis.conf
@@ -13,8 +11,6 @@ windows:
         - yarn dev:watch
 - window_name: dev
   layout: even-horizontal
-  shell_command_before:
-    - nvm use default
   panes:
     - ''
     - ''

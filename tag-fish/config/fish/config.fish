@@ -67,7 +67,7 @@ abbr ytuw 'yarn test:unit:watch'
 abbr ydc 'yarn dev-client'
 abbr ydw 'yarn dev:watch'
 
-source /Users/robbie/Library/Preferences/org.dystroy.broot/launcher/fish/br
+source /Users/robbie/Library/Application\ Support/org.dystroy.broot/launcher/fish/br.fish
 
 # starship
 # starship init fish | source

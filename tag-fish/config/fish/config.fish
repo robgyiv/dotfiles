@@ -57,6 +57,10 @@ alias macsleep "pmset displaysleepnow"
 abbr avenv 'source venv/bin/activate'
 abbr venv 'virtualenv venv -p $argv[1]'
 
+# tmux
+abbr t tmux
+abbr tns 'tmux new -s (basename (pwd))'
+
 # pyenv
 source (pyenv init - | psub)
 status --is-interactive; and pyenv init - | source
@@ -67,7 +71,7 @@ abbr ytuw 'yarn test:unit:watch'
 abbr ydc 'yarn dev-client'
 abbr ydw 'yarn dev:watch'
 
-source /Users/robbie/Library/Preferences/org.dystroy.broot/launcher/fish/br
+source /Users/robbie/Library/Application\ Support/org.dystroy.broot/launcher/fish/br.fish
 
 # starship
 # starship init fish | source

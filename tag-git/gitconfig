@@ -17,7 +17,8 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = nvim
-  pager = diff-so-fancy | less --tabs=4 -RFX
+  ; pager = diff-so-fancy | less --tabs=4 -RFX
+  ; pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   conflictstyle = diff3
 [fetch]
@@ -39,4 +40,21 @@
 [diff-so-fancy]
   first-run = false
 [pull]
-	rebase = false
+  rebase = false
+[pager]
+  diff = delta
+  log = tig
+  reflog = delta
+  show = delta
+[delta]
+  line-numbers = true
+  navigate = true
+[interactive]
+  ; diffFilter = diff-so-fancy --patch
+[diff]
+  colorMoved = default
+[filter "lfs"]
+	smudge = git-lfs smudge --skip -- %f
+	process = git-lfs filter-process --skip
+	required = true
+	clean = git-lfs clean -- %f

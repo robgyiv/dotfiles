@@ -5,6 +5,7 @@ set -x EDITOR nvim
 
 set -gx PKG_CONFIG_PATH "/usr/local/opt/libffi/lib/pkgconfig"
 set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
+set -gx CPPFLAGS "-I/usr/local/opt/libffi/include"
 
 # Aliases
 
@@ -33,12 +34,7 @@ abbr nvmd 'nvm use default'
 
 # editors
 abbr e emacs -nw
-alias st '/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl $argv'
 abbr v nvim
-
-# notebooks
-abbr nbk 'cd ~/code/notebooks; jupyter notebook'
-abbr nbkc 'jupyter notebook'
 
 # useful
 abbr brewcaskup 'brew cask list; xargs brew cask reinstall'
@@ -46,7 +42,6 @@ abbr brewup 'brew update; brew upgrade'
 abbr kwmrs 'brew services restart chunkwm; brew services restart khd'
 abbr l 'ls -alh'
 abbr pipr 'pip install -r requirements.txt'
-abbr t tmux
 alias apprm 'mdfind -name $argv' # find all files associated with an app
 alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
 alias cwd "pwd | tr -d '\n' | pbcopy"
@@ -69,15 +64,14 @@ abbr tns 'tmux new -s (basename (pwd))'
 # status is-login; and pyenv init --path | source
 # pyenv init - | source
 
-# useful commands at work
-abbr ytuw 'yarn test:unit:watch'
-abbr ydc 'yarn dev-client'
-abbr ydw 'yarn dev:watch'
+# source /Users/robbie/Library/Application\ Support/org.dystroy.broot/launcher/fish/br.fish
 
-source /Users/robbie/Library/Application\ Support/org.dystroy.broot/launcher/fish/br.fish
+# nnn
+abbr nn 'nnn -de'
+export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 
-# starship
-# starship init fish | source
+# nvm
+export NVM_DIR="$HOME/.nvm"
 
-# asdf
-source /usr/local/opt/asdf/asdf.fish
+# work
+source ~/.config/fish/work.fish

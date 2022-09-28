@@ -5,7 +5,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'itchyny/lightline.vim'
 Plug 'srstevenson/vim-picker', { 'branch': 'main' }
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'christoomey/vim-tmux-navigator'
@@ -15,23 +15,31 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-fugitive'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'mcchrish/nnn.vim'
+
+Plug 'Shougo/ddc.vim'
+Plug 'Shougo/ddc-around'
+Plug 'Shougo/ddc-matcher_head'
+Plug 'Shougo/ddc-sorter_rank'
+Plug 'vim-denops/denops.vim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
+
+" Themes
 Plug 'liuchengxu/space-vim-theme'
 Plug 'sbdchd/neoformat'
 Plug 'sophacles/vim-processing'
 Plug 'tpope/vim-vinegar'
 Plug 'yuttie/hydrangea-vim'
 Plug 'christophermca/meta5'
-if has('nvim')
-  Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/defx.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 Plug 'haishanh/night-owl.vim'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'bluz71/vim-nightfly-guicolors'
+Plug 'scalameta/nvim-metals'
+Plug 'sainnhe/everforest'
+Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+Plug 'yunlingz/ci_dark'
+Plug 'morhetz/gruvbox'
 
 call plug#end()
 
@@ -41,18 +49,20 @@ call plug#end()
 autocmd BufEnter * let &titlestring = '' . expand("%:t")
 set termguicolors
 colorscheme space_vim_theme
+" let g:tokyonight_style = "day"
 let g:lightline = {
-      \ 'colorscheme': 'one',
+      \ 'colorscheme': 'ci_dark',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
       \ },
       \ 'component_function': {
-      \   'gitbranch': 'fugitive#head'
+      \   'gitbranch': 'FugitiveHead'
       \ },
       \ }
-let &colorcolumn="80"
-set cursorline
+" let &colorcolumn="80"
+" set cursorline
+set colorcolumn=80,120
 let mapleader = "\<Space>"
 set autoread
 set background=dark
@@ -73,10 +83,11 @@ set splitright
 set title
 " Visual autocomplete for command menu
 set wildmenu
-let g:deoplete#enable_at_startup = 1
 set clipboard=unnamed
 let g:neoformat_enabled_python = ['black']
 let g:neoformat_enabled_javascript = ['prettier-eslint']
+let g:neoformat_enabled_sbt = ['scalafmt']
+let g:neoformat_enabled_scala = ['scalafmt']
 
 " Edit crontab with vim
 autocmd filetype crontab setlocal nobackup nowritebackup
@@ -149,6 +160,57 @@ let g:python_host_prog = '/Users/robbie/.pyenv/versions/neovim2/bin/python'
 let g:python3_host_prog = '/Users/robbie/.pyenv/versions/neovim3/bin/python'
 
 " ale
-let b:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let b:ale_fixers = {'javascript': ['prettier', 'eslint'], 'scala': ['scalafmt']}
 let g:ale_fix_on_save = 1
 let g:ale_linters = {'javascript': ['eslint', 'flow']}
+
+" ddc
+call ddc#custom#patch_global('sources', ['around'])
+call ddc#custom#patch_global('sourceOptions', {
+      \ '_': {
+      \   'matchers': ['matcher_head'],
+      \   'sorters': ['sorter_rank']},
+      \ })
+call ddc#enable()
+
+" nnn
+" Set custom mappings
+nnoremap <silent> <leader>nn :NnnPicker<CR>
+
+" Start n³ in the current file's directory
+nnoremap <leader>n :NnnPicker %:p:h<CR>
+
+let g:nnn#action = {
+      \ '<c-t>': 'tab split',
+      \ '<c-s>': 'split',
+      \ '<c-v>': 'vsplit' }
+
+" treesitter
+" require'nvim-treesitter.configs'.setup {
+"   highlight = {
+"     enable = true,
+"     -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+"     -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+"     -- Using this option may slow down your editor, and you may see some duplicate highlights.
+"     -- Instead of true it can also be a list of languages
+"     additional_vim_regex_highlighting = false,
+"   },
+" }
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
+
+" " coq
+" " main one
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" " 9000+ Snippets
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+
+" " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
+" " Need to **configure separately**
+
+" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" " - shell repl
+" " - nvim lua api
+" " - scientific calculator
+" " - comment banner
+" " - etc

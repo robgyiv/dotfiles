@@ -52,6 +52,7 @@ alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
 alias cwd "pwd | tr -d '\n' | pbcopy"
 alias path 'echo $PATH | tr -s ":" "\n"'
 alias macsleep "pmset displaysleepnow"
+alias resetwifi 'networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 
 # venv
 abbr avenv 'source venv/bin/activate'
@@ -62,9 +63,11 @@ abbr t tmux
 abbr tns 'tmux new -s (basename (pwd))'
 
 # pyenv
-source (pyenv init - | psub)
-status --is-interactive; and pyenv init - | source
-status --is-interactive; and pyenv virtualenv-init - | source
+# source (pyenv init - | psub)
+# status --is-interactive; and pyenv init - | source
+# status --is-interactive; and pyenv virtualenv-init - | source
+# status is-login; and pyenv init --path | source
+# pyenv init - | source
 
 # useful commands at work
 abbr ytuw 'yarn test:unit:watch'

@@ -74,4 +74,7 @@ export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 export NVM_DIR="$HOME/.nvm"
 
 # work
-source ~/.config/fish/work.fish
+set -l work_config ~/.config/fish/work.fish
+if test -e work_config
+  source work_config
+end

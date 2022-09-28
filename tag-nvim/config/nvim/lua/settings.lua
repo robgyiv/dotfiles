@@ -23,10 +23,11 @@ o.title = true
 
 vim.cmd[[colorscheme space-nvim]]
 
--- g.neoformat_enabled_javascript = ['prettier-eslint']
--- g.neoformat_enabled_python = ['black']
--- g.neoformat_enabled_sbt = ['scalafmt']
--- g.neoformat_enabled_scala = ['scalafmt']
+-- g.neoformat_enabled_javascript = 'prettier-eslint'
+-- g.neoformat_enabled_python = 'black'
+-- g.neoformat_enabled_sbt = 'scalafmt'
+-- g.neoformat_enabled_scala = 'scalafmt'
+-- g.neoformat_enabled_lua = 'luacheck'
 
 g.netrw_liststyle = 3
 
@@ -109,4 +110,12 @@ require('gitsigns').setup {
   yadm = {
     enable = false
   },
+}
+
+require('telescope').setup{
+  pickers = {
+    find_files = {
+      find_command = { "rg", "--files", "-L", "--hidden", "--glob", "!.git/*" },
+    }
+  }
 }

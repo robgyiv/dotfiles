@@ -20,28 +20,23 @@ o.splitbelow = true
 o.splitright = true
 o.termguicolors = true
 o.title = true
+o.termguicolors = true
 
-vim.cmd[[colorscheme space-nvim]]
+-- vim.cmd[[colorscheme oxocarbon]]
+vim.cmd("colorscheme spaceduck")
 
--- g.neoformat_enabled_javascript = 'prettier-eslint'
--- g.neoformat_enabled_python = 'black'
--- g.neoformat_enabled_sbt = 'scalafmt'
--- g.neoformat_enabled_scala = 'scalafmt'
--- g.neoformat_enabled_lua = 'luacheck'
+g.neoformat_enabled_javascript = {'prettier-eslint'}
+g.neoformat_enabled_typescript = {'prettier-eslint'}
+g.neoformat_enabled_python = {'black', 'isort'}
+g.neoformat_enabled_sbt = {'scalafmt'}
+g.neoformat_enabled_scala = {'scalafmt'}
+g.neoformat_enabled_lua = {'luacheck'}
 
 g.netrw_liststyle = 3
 
--- lightline
--- Replace filename component of Lightline statusline
--- g.lightline = {
---   active = {
---       left = [ [ 'mode', 'paste' ], [ 'readonly', 'absolutepath', 'modified' ] ],
---   }
--- }
-
 require("lualine").setup({
   options = {
-    theme = 'onedark',
+    theme = 'spaceduck',
     section_separators = '',
     component_separators = ''
   },
@@ -119,3 +114,6 @@ require('telescope').setup{
     }
   }
 }
+
+require("mason").setup()
+require("mason-lspconfig").setup()

@@ -58,6 +58,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-vinegar'
   use 'christoomey/vim-tmux-navigator'
   use 'lewis6991/gitsigns.nvim'
+  use 'folke/tokyonight.nvim'
+  use { 'pineapplegiant/spaceduck', branch = 'dev' }
 
 end)
 

@@ -40,7 +40,7 @@ local lsp_flags = {
 }
 
 require("mason-lspconfig").setup({
-    -- ensure_installed = { "pyright", "tsserver", "rust_analyzer", "quick_lint_js" }
+    -- ensure_installed = { "pyright", "tsserver", "rust_analyzer", "quick_lint_js", "clangd", "lua-language-server" },
     automatic_installation = true
 })
 

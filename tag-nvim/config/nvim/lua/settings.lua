@@ -6,6 +6,7 @@ local wo = vim.wo
 
 o.autoread = true
 o.background = 'dark'
+o.clipboard = 'unnamedplus'
 o.colorcolumn = '80,120'
 o.cursorline = true
 -- o.foldexpr= 'nvim_treesitter#foldexpr()'

@@ -231,7 +231,7 @@ include /etc/sway/config.d/*
 
 # Window appearance
 default_border pixel 1
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 2
 
 # font JetBrains Mono Nerd Font Regular 10
 font Roboto Regular 12
@@ -256,5 +256,6 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Some useful shortcuts
 bindsym $mod+Shift+w exec firefox
-bindsym $mod+Shift+x exec wofi --show drun
+bindsym $mod+Shift+f exec wofi --show drun
+bindsym $mod+Shift+x exec swaylock
 

@@ -82,6 +82,8 @@ tooltip label {
   /* border: 3px solid rgba(0, 0, 0, 0.3); */
   border-radius: 10px;
   background-clip: padding-box;
+  background: rgb(0,0,255);
+  background: radial-gradient(circle, rgba(0,80,181,1) 0%, rgba(0,0,255,1) 100%);
 }
 
 /* If workspaces is the leftmost module, omit left margin */
@@ -90,7 +92,7 @@ tooltip label {
 }
 
 .modules-right {
-    margin-right: 0px;
+    margin-right: 10px;
 }
 
 @keyframes blink {

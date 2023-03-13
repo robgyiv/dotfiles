@@ -30,6 +30,8 @@ abbr gpom 'git push origin master'
 abbr grv 'git remote -v'
 abbr gst 'git status'
 abbr gfopm 'git fetch origin; git pull origin master'
+abbr gpfwl 'git push --force-with-lease'
+
 abbr nvmd 'nvm use default'
 
 # editors

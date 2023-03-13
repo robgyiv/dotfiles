@@ -1,0 +1,114 @@
+* {
+    border: none;
+    border-radius: 0;
+    /* font-family: Roboto, Helvetica, Arial, sans-serif; */
+    font-family: JetBrains Mono Nerd Font, monospace;
+    font-size: 12px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: none;
+    /* border-bottom: 1px solid rgba(255, 255, 255, 0.5); */
+    color: white;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background: transparent;
+    color: white;
+    border-bottom: 3px solid transparent;
+}
+
+#workspaces button.focused {
+    background: #64727D;
+    border-bottom: 2px solid white;
+}
+
+#mode, #clock, #battery {
+    padding: 0 10px;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock {
+    background-color: #64727D;
+}
+
+#battery {
+    background-color: #ffffff;
+    color: black;
+}
+
+#battery.charging {
+    color: white;
+    background-color: #26A65B;
+}
+
+#backlight,
+#battery,
+#clock,
+#cpu,
+#custom-fans,
+#custom-media,
+#idle_inhibitor,
+#language,
+#memory,
+#mode,
+#mpd,
+#network,
+#pulseaudio,
+#temperature,
+#tray,
+#window,
+#workspaces {
+  background-color: rgba(0, 80, 181, 0.6);
+  padding: 5px 10px;
+  margin: 5px;
+  /* margin: 2px 4px 5px 4px; */
+  /* border: 3px solid rgba(0, 0, 0, 0.3); */
+  border-radius: 10px;
+  background-clip: padding-box;
+  background: rgb(0,0,255);
+  background: radial-gradient(circle, rgba(0,80,181,1) 0%, rgba(0,0,255,1) 100%);
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 20px;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background: #f53c3c;
+    color: white;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+

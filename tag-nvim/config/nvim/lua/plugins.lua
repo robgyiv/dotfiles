@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
+  use {'nyoom-engineering/oxocarbon.nvim'}
 
 end)
 

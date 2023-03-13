@@ -25,6 +25,7 @@ o.termguicolors = true
 
 -- vim.cmd[[colorscheme oxocarbon]]
 vim.cmd("colorscheme spaceduck")
+vim.cmd("colorscheme oxocarbon")
 
 g.neoformat_enabled_javascript = {'prettier-eslint'}
 g.neoformat_enabled_typescript = {'prettier-eslint'}

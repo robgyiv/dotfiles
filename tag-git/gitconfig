@@ -1,6 +1,6 @@
 [user]
   name = Robbie R
-  email = robbie@roygbiv.co.uk
+  email = robbie@faculty.ai
 [push]
   default = current
 [color]
@@ -17,8 +17,6 @@
   excludesfile = ~/.gitignore
   autocrlf = input
   editor = nvim
-  ; pager = diff-so-fancy | less --tabs=4 -RFX
-  ; pager = diff-so-fancy | less --tabs=4 -RFX
 [merge]
   conflictstyle = diff3
 [fetch]
@@ -58,3 +56,5 @@
 	process = git-lfs filter-process --skip
 	required = true
 	clean = git-lfs clean -- %f
+[init]
+	defaultBranch = main

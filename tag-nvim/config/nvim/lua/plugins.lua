@@ -69,6 +69,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
   use {'nyoom-engineering/oxocarbon.nvim'}
+  use 'github/copilot.vim'
 
 end)
 

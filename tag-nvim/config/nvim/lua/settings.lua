@@ -117,5 +117,9 @@ require('telescope').setup{
   }
 }
 
-require("mason").setup()
-require("mason-lspconfig").setup()
+-- require("mason").setup()
+-- require("mason-lspconfig").setup()
+
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
+vim.cmd[[autocmd BufWritePre * undojoin | Neoformat]]
+-- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]

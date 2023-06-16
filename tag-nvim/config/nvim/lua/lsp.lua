@@ -39,6 +39,14 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+lspconfig.pyright.setup{
+    on_attach=on_attach,
+    root_dir = function()
+      return vim.fn.getcwd()
+    end,
+}
+
+require("mason").setup()
 require("mason-lspconfig").setup({
     -- ensure_installed = { "pyright", "tsserver", "rust_analyzer", "quick_lint_js", "clangd", "lua-language-server" },
     automatic_installation = true
@@ -74,4 +82,4 @@ for _, lsp in ipairs(servers) do
 end
 
 -- https://www.jvt.me/posts/2022/03/01/neovim-format-on-save/
-vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+-- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()]]

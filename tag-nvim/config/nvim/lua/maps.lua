@@ -16,8 +16,12 @@ map('n', '<leader>ff', '<cmd>lua require("telescope.builtin").find_files()<cr>',
 map('n', '<leader>fg', '<cmd>lua require("telescope.builtin").live_grep()<cr>', options)
 map('n', '<leader>fb', '<cmd>lua require("telescope.builtin").buffers()<cr>', options)
 map('n', '<leader>fh', '<cmd>lua require("telescope.builtin").help_tags()<cr>', options)
+map('n', '<leader>fd', '<cmd>lua require("telescope.builtin").lsp_definitions()<cr>', options)
 
 -- Neoformat
 map('n', '<leader>nf', '<cmd>Neoformat<cr>', options)
 
 require('lspconfig')   -- lua/lspconfig.lua
+
+-- Copilot
+map('n', '<leader>cp', '<cmd>Copilot panel<cr>', options)

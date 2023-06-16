@@ -23,13 +23,13 @@ abbr gfo 'git fetch origin'
 abbr gida "git config user.email 'robbie@asidatascience.com'"
 abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
 abbr gl 'git pull'
-abbr glom 'git pull origin master'
+abbr glom 'git pull origin (git rev-parse --abbrev-ref HEAD)'
 abbr gnum 'git rev-list --all --count'
 abbr gp 'git push'
-abbr gpom 'git push origin master'
+abbr gpom 'git push origin (git rev-parse --abbrev-ref HEAD)'
 abbr grv 'git remote -v'
 abbr gst 'git status'
-abbr gfopm 'git fetch origin; git pull origin master'
+abbr gfopm 'git fetch origin; git pull origin (git rev-parse --abbrev-ref HEAD)'
 abbr gpfwl 'git push --force-with-lease'
 
 abbr nvmd 'nvm use default'
@@ -47,7 +47,6 @@ abbr pipr 'pip install -r requirements.txt'
 alias apprm 'mdfind -name $argv' # find all files associated with an app
 alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
 alias cwd "pwd | tr -d '\n' | pbcopy"
-alias path 'echo $PATH | tr -s ":" "\n"'
 alias macsleep "pmset displaysleepnow"
 alias resetwifi 'networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
 

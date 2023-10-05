@@ -30,7 +30,10 @@ abbr gpom 'git push origin (git rev-parse --abbrev-ref HEAD)'
 abbr grv 'git remote -v'
 abbr gst 'git status'
 abbr gfopm 'git fetch origin; git pull origin (git rev-parse --abbrev-ref HEAD)'
+abbr gfogl 'git fetch origin; git pull'
 abbr gpfwl 'git push --force-with-lease'
+abbr gsta 'git stash'
+abbr gstap 'git stash pop'
 
 abbr nvmd 'nvm use default'
 
@@ -49,10 +52,26 @@ alias bigfolders "du -k ~ | awk '$argv > 50000' | sort -nr"
 alias cwd "pwd | tr -d '\n' | pbcopy"
 alias macsleep "pmset displaysleepnow"
 alias resetwifi 'networksetup -setairportpower en0 off; networksetup -setairportpower en0 on'
+alias efishconf 'nvim ~/.config/fish/config.fish; source ~/.config/fish/config.fish'
+alias sfishconf 'source ~/.config/fish/config.fish'
+alias envimconf 'nvim ~/.config/nvim/init.lua'
+abbr D --position anywhere --set-cursor '% | delta'
+abbr L --position anywhere --set-cursor '% | less'
+abbr rgd --position anywhere --set-cursor 'rg --json % | delta'
+abbr cwdf --position anywhere --set-cursor 'echo (pwd)/% | pbcopy'
+abbr catpb --position anywhere --set-cursor 'cat % | pbcopy'
+abbr echopb --position anywhere --set-cursor 'echo % | pbcopy'
+## poetry
+abbr ptpyt --position anywhere --set-cursor 'poetry run pytest % --color=yes -vvv | delta'
+abbr ptins 'poetry install'
+abbr ptshl 'poetry shell'
+abbr ptshv 'poetry env info; and poetry shell; and sleep .5; nvim .'
+abbr ptr 'poetry run'
+abbr ptrp 'poetry run python'
 
 # venv
 abbr avenv 'source venv/bin/activate'
-abbr venv 'virtualenv venv -p $argv[1]'
+abbr venv --set-cursor 'virtualenv venv -p %'
 
 # tmux
 abbr t tmux
@@ -61,14 +80,32 @@ abbr tns 'tmux new -s (basename (pwd))'
 # pyenv
 # source (pyenv init - | psub)
 # status --is-interactive; and pyenv init - | source
-# status --is-interactive; and pyenv virtualenv-init - | source
 # status is-login; and pyenv init --path | source
-# pyenv init - | source
+# eval "$(pyenv virtualenv-init -)"
+pyenv init - --no-rehash | source
+status --is-interactive; and pyenv virtualenv-init - | source
+
+# https://github.com/pyenv/pyenv-virtualenv/issues/259#issuecomment-1598995080
+# if status is-interactive
+#     pyenv init - --no-rehash | source
+#     pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-event fish_preexec/g' | source
+# end
+
+# ChatGPT 4 suggestion
+# function pyenv
+#     if not functions -q _pyenv_initialized
+#         pyenv init - --no-rehash | source
+#         pyenv virtualenv-init - | sed 's/--on-event fish_prompt/--on-event fish_preexec/g' | source
+#         function _pyenv_initialized
+#         end
+#     end
+#     command pyenv $argv
+# end
 
 # source /Users/robbie/Library/Application\ Support/org.dystroy.broot/launcher/fish/br.fish
 
 # nnn
-abbr nn 'nnn -de'
+abbr nn 'nnn -deH'
 export NNN_PLUG='f:finder;o:fzopen;p:mocq;d:diffs;t:nmount;v:imgview'
 
 # nvm

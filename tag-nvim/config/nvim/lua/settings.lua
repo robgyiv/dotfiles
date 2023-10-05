@@ -22,17 +22,20 @@ o.splitright = true
 o.termguicolors = true
 o.title = true
 o.termguicolors = true
+o.syntax = true
 
 -- vim.cmd[[colorscheme oxocarbon]]
-vim.cmd("colorscheme spaceduck")
+-- vim.cmd("colorscheme spaceduck")
 vim.cmd("colorscheme oxocarbon")
 
+g.neoformat_run_all_formatters = 1
 g.neoformat_enabled_javascript = {'prettier-eslint'}
 g.neoformat_enabled_typescript = {'prettier-eslint'}
-g.neoformat_enabled_python = {'black', 'isort'}
+g.neoformat_enabled_python = {'isort', 'black'}
 g.neoformat_enabled_sbt = {'scalafmt'}
 g.neoformat_enabled_scala = {'scalafmt'}
-g.neoformat_enabled_lua = {'luacheck'}
+g.neoformat_enabled_lua = {'luaformatter'}
+g.neoformat_enabled_markdown = {'prettierd'}
 
 g.netrw_liststyle = 3
 
@@ -121,5 +124,11 @@ require('telescope').setup{
 -- require("mason-lspconfig").setup()
 
 -- vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
-vim.cmd[[autocmd BufWritePre * undojoin | Neoformat]]
+-- vim.cmd[[autocmd BufWritePre * undojoin | Neoformat]]
 -- vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.format()]]
+
+vim.api.nvim_command('augroup fmt')
+vim.api.nvim_command('autocmd!')
+vim.api.nvim_command('autocmd BufWritePre * undojoin | Neoformat')
+vim.api.nvim_command('augroup END')
+

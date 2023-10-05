@@ -68,8 +68,18 @@ return require('packer').startup(function(use)
   use 'lewis6991/gitsigns.nvim'
   use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
-  use {'nyoom-engineering/oxocarbon.nvim'}
+  -- use {'nyoom-engineering/oxocarbon.nvim'}
+  use '/Users/robbie/code/github.com/nyoom-engineering/oxocarbon.nvim'
   use 'github/copilot.vim'
+  -- use {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("copilot").setup({})
+  --   end,
+  -- }
+  use 'tpope/vim-eunuch'
 
 end)
 

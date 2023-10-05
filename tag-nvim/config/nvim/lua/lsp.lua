@@ -40,10 +40,24 @@ local lsp_flags = {
 }
 
 lspconfig.pyright.setup{
-    on_attach=on_attach,
-    root_dir = function()
-      return vim.fn.getcwd()
-    end,
+  settings = {
+    python = {
+      pythonPath = function()
+        -- This will locate the virtualenv for the current project
+        local venv_path = vim.fn.glob(vim.fn.getcwd() .. "/.venv/bin/python")
+        if vim.fn.filereadable(venv_path) == 1 then
+          return venv_path
+        else
+          -- Fallback to system Python if no virtualenv was found
+          return vim.fn.exepath("python3") or vim.fn.exepath("python")
+        end
+      end
+    }
+  },
+  on_attach=on_attach,
+  root_dir = function()
+    return vim.fn.getcwd()
+  end,
 }
 
 require("mason").setup()
@@ -54,6 +68,10 @@ require("mason-lspconfig").setup({
 
 vim.g.coq_settings = { auto_start = 'shut-up' }
 local coq = require('coq')
+-- Copilot https://github.com/ms-jpq/coq_nvim/issues/379
+require("coq_3p") {
+  { src = "copilot", short_name = "COP", accept_key = "<c-f>" }
+}
 
 -- require('lspconfig')['pyright'].setup(coq.lsp_ensure_capabilities({
 --     on_attach = on_attach,

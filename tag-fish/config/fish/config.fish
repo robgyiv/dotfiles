@@ -3,9 +3,9 @@ set fish_greeting
 
 set -x EDITOR nvim
 
-set -gx PKG_CONFIG_PATH "/usr/local/opt/libffi/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/libffi/include"
+set -gx PKG_CONFIG_PATH /usr/local/opt/libffi/lib/pkgconfig
+set -gx LDFLAGS -L/usr/local/opt/libffi/lib
+set -gx CPPFLAGS -I/usr/local/opt/libffi/include
 
 # Aliases
 
@@ -57,17 +57,18 @@ alias sfishconf 'source ~/.config/fish/config.fish'
 alias envimconf 'nvim ~/.config/nvim/init.lua'
 abbr D --position anywhere --set-cursor '% | delta'
 abbr L --position anywhere --set-cursor '% | less'
-abbr rgd --position anywhere --set-cursor 'rg --json % | delta'
+abbr rgd --position anywhere --set-cursor 'rg --json -i % | delta'
 abbr cwdf --position anywhere --set-cursor 'echo (pwd)/% | pbcopy'
 abbr catpb --position anywhere --set-cursor 'cat % | pbcopy'
 abbr echopb --position anywhere --set-cursor 'echo % | pbcopy'
 ## poetry
-abbr ptpyt --position anywhere --set-cursor 'poetry run pytest % --color=yes -vvv | delta'
+abbr ptpyt --position anywhere --set-cursor 'poetry run pytest % --color=yes -vvv | delta --max-line-length=2048'
 abbr ptins 'poetry install'
 abbr ptshl 'poetry shell'
-abbr ptshv 'poetry env info; and poetry shell; and sleep .5; nvim .'
+abbr ptshv 'poetry env info; and poetry shell; and sleep .5; and nvim .'
 abbr ptr 'poetry run'
 abbr ptrp 'poetry run python'
+abbr poetrypytestlog 'poetry run pytest | tee /tmp/pytest-(date -Iseconds).txt'
 
 # venv
 abbr avenv 'source venv/bin/activate'

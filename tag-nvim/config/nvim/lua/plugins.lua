@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
   use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
   -- use {'nyoom-engineering/oxocarbon.nvim'}
-  use '/Users/robbie/code/github.com/nyoom-engineering/oxocarbon.nvim'
+  use 'robgyiv/oxocarbon.nvim'
   use 'github/copilot.vim'
   -- use {
   --   "zbirenbaum/copilot.lua",
@@ -80,6 +80,8 @@ return require('packer').startup(function(use)
   --   end,
   -- }
   use 'tpope/vim-eunuch'
+  use 'robgyiv/git-web-line.nvim'
+  use 'rhysd/git-messenger.vim'
 
 end)
 

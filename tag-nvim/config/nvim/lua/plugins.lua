@@ -69,7 +69,6 @@ return require('packer').startup(function(use)
   -- use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
   -- use {'nyoom-engineering/oxocarbon.nvim'}
-  -- use '/Users/robbie/code/github.com/nyoom-engineering/oxocarbon.nvim'
   use 'robgyiv/oxocarbon.nvim'
   use 'github/copilot.vim'
   -- use {
@@ -84,6 +83,8 @@ return require('packer').startup(function(use)
   use {'akinsho/git-conflict.nvim', tag = "*", config = function()
     require('git-conflict').setup()
   end}
+  use 'robgyiv/git-web-line.nvim'
+  use 'rhysd/git-messenger.vim'
 
 end)
 

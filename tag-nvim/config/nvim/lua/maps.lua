@@ -25,3 +25,6 @@ require('lspconfig')   -- lua/lspconfig.lua
 
 -- Copilot
 map('n', '<leader>cp', '<cmd>Copilot panel<cr>', options)
+
+-- git-web-line
+map('n', '<leader>gwl', '<cmd>GitWebLine<cr>', options)

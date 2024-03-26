@@ -28,14 +28,17 @@ o.syntax = true
 -- vim.cmd("colorscheme spaceduck")
 vim.cmd("colorscheme oxocarbon")
 
+g.python3_host_prog = '/Users/robbie/.pyenv/versions/neovim/bin/python'
+
 g.neoformat_run_all_formatters = 1
 g.neoformat_enabled_javascript = {'prettier-eslint'}
 g.neoformat_enabled_typescript = {'prettier-eslint'}
-g.neoformat_enabled_python = {'isort', 'black'}
+g.neoformat_enabled_python = {'ruff', 'isort', 'black'}
 g.neoformat_enabled_sbt = {'scalafmt'}
 g.neoformat_enabled_scala = {'scalafmt'}
 g.neoformat_enabled_lua = {'luaformatter'}
 g.neoformat_enabled_markdown = {'prettierd'}
+g.neoformat_enabled_graphql = {'prettierd'}
 
 g.netrw_liststyle = 3
 

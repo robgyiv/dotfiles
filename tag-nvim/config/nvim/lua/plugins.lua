@@ -85,6 +85,6 @@ return require('packer').startup(function(use)
   end}
   use 'robgyiv/git-web-line.nvim'
   use 'rhysd/git-messenger.vim'
-
+  use 'rmagatti/auto-session'
 end)
 

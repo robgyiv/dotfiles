@@ -24,7 +24,8 @@ return {
             --     -- your custom normal mode mappings
             --   },
             -- },
-            hidden = true,
+            hidden = { file_browser = true, folder_browser = true },
+            follow_symlinks = true,
           },
         },
       }

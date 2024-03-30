@@ -29,3 +29,8 @@ map('n', '<leader>cp', '<cmd>Copilot panel<cr>', options)
 
 -- git-web-line
 map('n', '<leader>gwl', '<cmd>GitWebLine<cr>', options)
+
+-- Copy absolute file path to clipboard
+map('n', '<leader>cafp', '<cmd>lua vim.fn.setreg(\'+"\', vim.fn.expand(\'%:p\'))<CR>', options)
+-- Copy relative file path to clipboard
+map('n', '<leader>cfp', '<cmd>lua vim.fn.setreg(\'+"\', vim.fn.expand(\'%:\'))<CR>', options)

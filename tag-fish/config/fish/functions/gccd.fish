@@ -1,9 +1,9 @@
-# git clone, cd into directory
-# usage: `gccd git@github.com:username/possible-project/repo-name.git`
-# TODO: git clone https sources
+# git clone, cd into directory in a tmux session
+# usage: `gccd git@gitlab.com:username/possible-project/repo-name.git`
+# TODO: git clone HTTPS sources
 
 function gccd
-    set code_dir "/Users/robbie/code"
+    set code_dir "$HOME/code"
     set domain_split (string split : $argv[1])
     set git_host (string split @ $domain_split)[2]
     set formatted_repo_path (string split .git $domain_split[2])
@@ -14,13 +14,21 @@ function gccd
         echo "$full_repo_path"
         echo "> Changing to directory"
         cd $full_repo_path
-        tmux new -s (basename (pwd))
-        return 1
+        attach-tmux (basename (pwd))
+        return 0
     else
         cd $code_dir
         git clone $argv[1] $full_repo_path
         echo "> Changing to directory"
         cd $full_repo_path
-        tmux new -s (basename (pwd))
+        attach-tmux (basename (pwd))
+    end
+end
+
+function attach-tmux -a session_name
+    if tmux has-session -t $session_name
+        tmux attach-session -t $session_name
+    else
+        tmux new-session -s $session_name
     end
 end

@@ -29,15 +29,15 @@ o.syntax = true
 vim.cmd("colorscheme oxocarbon")
 
 g.python3_host_prog = '$HOME/.pyenv/versions/neovim3/bin/python'
-
 g.neoformat_run_all_formatters = 1
 g.neoformat_enabled_javascript = {'prettier-eslint'}
 g.neoformat_enabled_typescript = {'prettier-eslint'}
-g.neoformat_enabled_python = {'isort', 'black'}
+g.neoformat_enabled_python = {'ruff', 'isort', 'black'}
 g.neoformat_enabled_sbt = {'scalafmt'}
 g.neoformat_enabled_scala = {'scalafmt'}
 g.neoformat_enabled_lua = {'luaformatter'}
 g.neoformat_enabled_markdown = {'prettierd'}
+g.neoformat_enabled_graphql = {'prettierd'}
 
 g.netrw_liststyle = 3
 
@@ -134,3 +134,14 @@ vim.api.nvim_command('autocmd!')
 vim.api.nvim_command('autocmd BufWritePre * undojoin | Neoformat')
 vim.api.nvim_command('augroup END')
 
+
+-- Highlight when yanking (copying) text
+--  Try it with `yap` in normal mode
+--  See `:help vim.highlight.on_yank()`
+vim.api.nvim_create_autocmd('TextYankPost', {
+  desc = 'Highlight when yanking (copying) text',
+  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
+})

@@ -31,7 +31,7 @@ return require('packer').startup(function(use)
     }
   use 'nvim-treesitter/nvim-treesitter-context'
 
-  use {'liuchengxu/space-vim-theme'}
+  -- use {'liuchengxu/space-vim-theme'}
 
   use({'scalameta/nvim-metals', requires = { "nvim-lua/plenary.nvim" }})
 
@@ -61,12 +61,12 @@ return require('packer').startup(function(use)
   use 'tpope/vim-fugitive'
   use 'itchyny/lightline.vim'
   use 'sbdchd/neoformat'
-  use 'Th3Whit3Wolf/space-nvim'
+  -- use 'Th3Whit3Wolf/space-nvim'
   use 'jiangmiao/auto-pairs'
   use 'tpope/vim-vinegar'
   use 'christoomey/vim-tmux-navigator'
   use 'lewis6991/gitsigns.nvim'
-  use 'folke/tokyonight.nvim'
+  -- use 'folke/tokyonight.nvim'
   use { 'pineapplegiant/spaceduck', branch = 'dev' }
   -- use {'nyoom-engineering/oxocarbon.nvim'}
   use 'robgyiv/oxocarbon.nvim'
@@ -80,8 +80,11 @@ return require('packer').startup(function(use)
   --   end,
   -- }
   use 'tpope/vim-eunuch'
+  use {'akinsho/git-conflict.nvim', tag = "*", config = function()
+    require('git-conflict').setup()
+  end}
   use 'robgyiv/git-web-line.nvim'
   use 'rhysd/git-messenger.vim'
-
+  use 'rmagatti/auto-session'
 end)
 

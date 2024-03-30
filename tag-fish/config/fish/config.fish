@@ -3,9 +3,12 @@ set fish_greeting
 
 set -x EDITOR nvim
 
-set -gx PKG_CONFIG_PATH "/usr/local/opt/libffi/lib/pkgconfig"
-set -gx LDFLAGS "-L/usr/local/opt/libffi/lib"
-set -gx CPPFLAGS "-I/usr/local/opt/libffi/include"
+# set -gx PKG_CONFIG_PATH /usr/local/opt/libffi/lib/pkgconfig
+# set -gx LDFLAGS -L/usr/local/opt/libffi/lib
+# set -gx CPPFLAGS -I/usr/local/opt/libffi/include
+
+# homebrew mac silicon
+eval (/opt/homebrew/bin/brew shellenv)
 
 # Aliases
 
@@ -20,8 +23,6 @@ abbr gco 'git checkout'
 abbr gd 'git diff'
 abbr gf 'git fetch'
 abbr gfo 'git fetch origin'
-abbr gida "git config user.email 'robbie@asidatascience.com'"
-abbr gidr "git config user.email 'robbie@roygbiv.co.uk'"
 abbr gl 'git pull'
 abbr glom 'git pull origin (git rev-parse --abbrev-ref HEAD)'
 abbr gnum 'git rev-list --all --count'
@@ -34,7 +35,6 @@ abbr gfogl 'git fetch origin; git pull'
 abbr gpfwl 'git push --force-with-lease'
 abbr gsta 'git stash'
 abbr gstap 'git stash pop'
-
 abbr nvmd 'nvm use default'
 
 # editors
@@ -61,6 +61,8 @@ abbr rgd --position anywhere --set-cursor 'rg --json % | delta'
 abbr cwdf --position anywhere --set-cursor 'echo (pwd)/% | pbcopy'
 abbr catpb --position anywhere --set-cursor 'cat % | pbcopy'
 abbr echopb --position anywhere --set-cursor 'echo % | pbcopy'
+# iCloud drive
+alias cdicloud 'cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 ## poetry
 abbr ptpyt --position anywhere --set-cursor 'poetry run pytest % --color=yes -vvv | delta'
 abbr ptins 'poetry install'
@@ -114,5 +116,14 @@ export NVM_DIR="$HOME/.nvm"
 # work
 set -l work_config ~/.config/fish/work.fish
 if test -e work_config
-  source work_config
+    source work_config
 end
+
+# Created by `pipx` on 2023-11-09 20:46:14
+set PATH $PATH /Users/robbie/.local/bin
+
+# https://direnv.net/docs/hook.html
+direnv hook fish | source
+
+# Homebrew use node@20
+set PATH $PATH /opt/homebrew/opt/node@20/bin

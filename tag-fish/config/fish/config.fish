@@ -37,6 +37,8 @@ abbr gsta 'git stash'
 abbr gstap 'git stash pop'
 abbr gdmbm 'git diff --merge-base main'
 abbr gdmb --position anywhere --set-cursor 'git diff --merge-base %'
+abbr gbr 'git reflog | grep -i "checkout: moving" | awk \'!seen[$NF]++ {print $NF}\' | fzf | xargs git checkout'
+
 abbr nvmd 'nvm use default'
 
 # editors

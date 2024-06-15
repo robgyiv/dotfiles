@@ -132,3 +132,6 @@ direnv hook fish | source
 
 # Homebrew use node@20
 set PATH $PATH /opt/homebrew/opt/node@20/bin
+
+# fzf
+fzf --fish | source

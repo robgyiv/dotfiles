@@ -2,10 +2,11 @@
 function awsprof
   argparse 'l/login' 'k/kubeconfig' -- $argv
 
-  if test -f ~/.aws/config && test -n "$_flag_login"
+  if test -f ~/.aws/config
     set profile (cat ~/.aws/config | grep '\[profile ' | awk '{print $2}' | sed 's/\]//' | fzf) # Removes the `]` character
     export AWS_PROFILE="$profile"
     echo "AWS_PROFILE set to $profile"
+  if test -n "$_flag_login"
     aws-sso-util login
   end
 

@@ -150,5 +150,16 @@ return {
                 -- option = {}, -- setup modules' option,
             })
         end
+    }, {
+        "tanvirtin/vgit.nvim",
+        dependencies = "nvim-lua/plenary.nvim",
+        config = function()
+            require("vgit").setup({
+                settings = {
+                    live_blame = {enabled = false},
+                    line_gutter = {enabled = true}
+                }
+            })
+        end
     }
 }

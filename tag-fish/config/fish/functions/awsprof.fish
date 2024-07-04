@@ -6,6 +6,7 @@ function awsprof
     set profile (cat ~/.aws/config | grep '\[profile ' | awk '{print $2}' | sed 's/\]//' | fzf) # Removes the `]` character
     export AWS_PROFILE="$profile"
     echo "AWS_PROFILE set to $profile"
+  end
   if test -n "$_flag_login"
     aws-sso-util login
   end

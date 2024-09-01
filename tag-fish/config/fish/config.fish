@@ -135,3 +135,9 @@ set PATH $PATH /opt/homebrew/opt/node@20/bin
 
 # fzf
 fzf --fish | source
+
+# go
+set PATH $PATH /opt/homebrew/bin/go/bin $HOME/go/bin
+
+# starship
+starship init fish | source

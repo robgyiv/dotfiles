@@ -12,7 +12,7 @@ after-login-command = []
 after-startup-command = []
 
 # Start AeroSpace at login
-start-at-login = false
+start-at-login = true
 
 # Normalizations. See: https://nikitabobko.github.io/AeroSpace/guide#normalization
 enable-normalization-flatten-containers = true
@@ -58,11 +58,10 @@ preset = 'qwerty'
 [gaps]
 inner.horizontal = 8
 inner.vertical =   8
-outer.left =       0
-outer.bottom =     0
-outer.top =        0
-outer.right =      0
-
+outer.left =       8
+outer.bottom =     8
+outer.top =        8
+outer.right =      8
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -116,7 +115,7 @@ alt-shift-equal = 'resize smart +50'
 # See: https://nikitabobko.github.io/AeroSpace/commands#workspace
 alt-1 = 'workspace 1'
 alt-2 = 'workspace 2'
-alt-3 = 'workspace 3'
+ctrl-alt-3 = 'workspace 3'
 alt-4 = 'workspace 4'
 alt-5 = 'workspace 5'
 alt-6 = 'workspace 6'
@@ -202,3 +201,24 @@ alt-shift-h = ['join-with left', 'mode main']
 alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
+
+# App-specific workspaces
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace C'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.mail'
+run = 'move-node-to-workspace M'
+
+[[on-window-detected]]
+if.app-id = 'md.obsidian'
+run = 'move-node-to-workspace O'
+
+[[on-window-detected]]
+if.app-id = 'com.kapeli.dashdoc'
+run = 'move-node-to-workspace D'
+
+[[on-window-detected]]
+if.app-id = 'com.mozilla.firefox'
+run = 'move-node-to-workspace F'

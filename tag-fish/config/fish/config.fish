@@ -44,6 +44,7 @@ abbr nvmd 'nvm use default'
 # editors
 abbr e emacs -nw
 abbr v nvim
+abbr vrdm nvim README.md
 
 # useful
 abbr brewcaskup 'brew cask list; xargs brew cask reinstall'

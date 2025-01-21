@@ -220,5 +220,5 @@ if.app-id = 'com.kapeli.dashdoc'
 run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
-if.app-id = 'com.mozilla.firefox'
+if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace F'

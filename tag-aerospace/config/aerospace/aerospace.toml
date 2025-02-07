@@ -38,6 +38,9 @@ default-root-container-orientation = 'auto'
 # Fallback value (if you omit the key): on-focused-monitor-changed = []
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
+# Mouse follows focus when focused window changed
+on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
+
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
 # Also see: https://nikitabobko.github.io/AeroSpace/goodies#disable-hide-app
@@ -205,7 +208,18 @@ alt-shift-l = ['join-with right', 'mode main']
 # App-specific workspaces
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
-run = 'move-node-to-workspace C'
+run = [
+  # FIX: this is a workaround for https://github.com/nikitabobko/AeroSpace/issues/68
+  # this was also observed in:
+  # - https://github.com/ghostty-org/ghostty/issues/1840
+  # - https://github.com/ghostty-org/ghostty/issues/2006
+
+  # After launching Ghostty, hit Shift+Ctrl+; to enter mode service. Hit f to toggle off floating.
+  # Now you can add tabs (Cmd+t) without having the window reserving dead space next to it.
+
+  # "layout floating",
+  "move-node-to-workspace C",
+]
 
 [[on-window-detected]]
 if.app-id = 'com.apple.mail'

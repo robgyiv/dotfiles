@@ -51,8 +51,7 @@ function gccd
     end
 
     if test -d $full_repo_path
-        echo "> Directory already exists at:"
-        echo "$full_repo_path"
+        echo "> Directory already exists at $full_repo_path"
         echo "> Changing to directory"
         cd $full_repo_path
         attach-tmux (basename (pwd))

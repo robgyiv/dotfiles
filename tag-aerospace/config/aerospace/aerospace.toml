@@ -205,6 +205,14 @@ alt-shift-j = ['join-with down', 'mode main']
 alt-shift-k = ['join-with up', 'mode main']
 alt-shift-l = ['join-with right', 'mode main']
 
+[workspace-to-monitor-force-assignment]
+    C = 'main'                       # Main monitor
+    F = 'main'                       # Main monitor
+    D = 'secondary'                  # Non-main monitor in case when there are only two monitors
+    M = 'secondary'                  # Non-main monitor in case when there are only two monitors
+    O = 'secondary'                  # Non-main monitor in case when there are only two monitors
+    S = 'secondary'                  # Non-main monitor in case when there are only two monitors
+
 # App-specific workspaces
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
@@ -236,3 +244,7 @@ run = 'move-node-to-workspace D'
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
 run = 'move-node-to-workspace F'
+
+[[on-window-detected]]
+if.app-id = 'com.spotify.client'
+run = 'move-node-to-workspace S'

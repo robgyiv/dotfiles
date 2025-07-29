@@ -83,9 +83,20 @@ function attach-tmux -a session_name
         return 1
     end
 
-    if tmux has-session -t $session_name 2>/dev/null
-        tmux attach-session -t $session_name
+    set session_name (string replace -a -r '[.:\s]' '_' $session_name)
+
+    if test -n "$TMUX"
+        if tmux has-session -t $session_name 2>/dev/null
+            tmux switch-client -t $session_name
+        else
+            tmux new -d -s $session_name
+            tmux switch-client -t $session_name
+        end
     else
-        tmux new-session -s $session_name
+        if tmux has-session -t $session_name 2>/dev/null
+            tmux attach-session -t $session_name
+        else
+            tmux new-session -s $session_name
+        end
     end
 end

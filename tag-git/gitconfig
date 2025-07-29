@@ -3,6 +3,10 @@
   email = git@robbie.computer
 [push]
   default = current
+  rebase = false
+  default = simple
+  autoSetupRemote = true
+  followTags = true
 [color]
   ui = true
 [alias]
@@ -18,7 +22,7 @@
   autocrlf = input
   editor = nvim
 [merge]
-  conflictstyle = diff3
+  conflictstyle = zdiff3
 [fetch]
   prune = true
 [rebase]
@@ -37,8 +41,6 @@
   whitespace = red reverse
 [diff-so-fancy]
   first-run = false
-[pull]
-  rebase = false
 [pager]
   diff = delta
   log = tig
@@ -50,11 +52,16 @@
 [interactive]
   ; diffFilter = diff-so-fancy --patch
 [diff]
-  colorMoved = default
+  colorMoved = plain
+  algorithm = histogram
+  mnemonicPrefix = true
+  renames = true
 [filter "lfs"]
-	smudge = git-lfs smudge --skip -- %f
-	process = git-lfs filter-process --skip
-	required = true
-	clean = git-lfs clean -- %f
+  smudge = git-lfs smudge --skip -- %f
+  process = git-lfs filter-process --skip
+  required = true
+  clean = git-lfs clean -- %f
 [init]
-	defaultBranch = main
+  defaultBranch = main
+[tag]
+  sort = version:refna

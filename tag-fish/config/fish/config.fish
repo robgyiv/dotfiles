@@ -66,13 +66,14 @@ abbr rgd --position anywhere --set-cursor 'rg --json -i % | delta'
 abbr cwdf --position anywhere --set-cursor 'echo (pwd)/% | pbcopy'
 abbr catpb --position anywhere --set-cursor 'cat % | pbcopy'
 abbr echopb --position anywhere --set-cursor 'echo % | pbcopy'
+abbr youtube-dl --position anywhere --set-cursor 'yt-dlp'
 # iCloud drive
 alias cdicloud 'cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 ## poetry
 abbr ptpyt --position anywhere --set-cursor 'poetry run pytest % --color=yes -vvv | delta --max-line-length=2048'
 abbr ptins 'poetry install'
 abbr ptshl 'poetry shell'
-abbr ptshv 'poetry env info; and poetry shell && nvim .'
+abbr ptshv 'poetry env info; and eval (poetry env activate); nvim .'
 abbr ptr 'poetry run'
 abbr ptrp 'poetry run python'
 abbr poetrypytestlog --set-cursor 'poetry run pytest % | tee /tmp/pytest-(date -Iseconds).txt'
@@ -132,7 +133,7 @@ set PATH $PATH /Users/robbie/.local/bin
 direnv hook fish | source
 
 # Homebrew use node@20
-set PATH $PATH /opt/homebrew/opt/node@20/bin
+set PATH $PATH /opt/homebrew/opt/node@22/bin
 
 # fzf
 fzf --fish | source

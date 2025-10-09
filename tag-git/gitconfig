@@ -63,5 +63,3 @@
   clean = git-lfs clean -- %f
 [init]
   defaultBranch = main
-[tag]
-  sort = version:refna

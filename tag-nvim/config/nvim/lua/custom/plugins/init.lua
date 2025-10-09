@@ -64,7 +64,7 @@ return {
   },
   {
     'zbirenbaum/copilot.lua',
-    enabled = true,
+    enabled = false,
     cmd = 'Copilot',
     event = 'InsertEnter',
     config = function()
@@ -184,5 +184,37 @@ return {
       { '<c-l>', '<cmd><C-U>TmuxNavigateRight<cr>' },
       { '<c-\\>', '<cmd><C-U>TmuxNavigatePrevious<cr>' },
     },
+  },
+  {
+    'olimorris/codecompanion.nvim',
+    enabled = false,
+    opts = {},
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require('codecompanion').setup {
+        strategies = {
+          chat = {
+            adapter = 'copilot',
+          },
+          inline = {
+            adapter = 'copilot',
+          },
+        },
+        adapters = {
+          copilot = function()
+            return require('codecompanion.adapters').extend('copilot', {
+              schema = {
+                model = {
+                  default = 'gpt-4o',
+                },
+              },
+            })
+          end,
+        },
+      }
+    end,
   },
 }

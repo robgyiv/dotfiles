@@ -1,6 +1,6 @@
 return {
   -- add custom oxocarbon
-  { "robgyiv/oxocarbon.nvim" },
+  { "nyoom-engineering/oxocarbon.nvim" },
 
   -- Configure LazyVim to load gruvbox
   {

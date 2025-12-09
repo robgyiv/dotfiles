@@ -66,7 +66,7 @@ abbr rgd --position anywhere --set-cursor 'rg --json -i % | delta'
 abbr cwdf --position anywhere --set-cursor 'echo (pwd)/% | pbcopy'
 abbr catpb --position anywhere --set-cursor 'cat % | pbcopy'
 abbr echopb --position anywhere --set-cursor 'echo % | pbcopy'
-abbr youtube-dl --position anywhere --set-cursor 'yt-dlp'
+abbr youtube-dl --position anywhere --set-cursor yt-dlp
 # iCloud drive
 alias cdicloud 'cd ~/Library/Mobile\ Documents/com~apple~CloudDocs/'
 ## poetry
@@ -143,3 +143,7 @@ set PATH $PATH /opt/homebrew/bin/go/bin $HOME/go/bin
 
 # starship
 starship init fish | source
+
+# neovim
+# use local LLM for completion
+export LLM_KEY=NONE

@@ -10,7 +10,7 @@ return {
       sources = {
         files = {
           hidden = true,
-          ignored = false,
+          ignored = true,
         },
         grep = {
           hidden = true,
@@ -22,7 +22,7 @@ return {
         },
         explorer = {
           hidden = true,
-          ignored = false,
+          ignored = true,
         },
       },
     },

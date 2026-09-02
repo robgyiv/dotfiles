@@ -44,4 +44,84 @@ return {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  -- {
+  --   "milanglacier/minuet-ai.nvim",
+  --   dependencies = { "nvim-lua/plenary.nvim" },
+  --   config = function()
+  --     require("minuet").setup({
+  --       -- Use FIM-style completion via Ollama
+  --       provider = "openai_fim_compatible",
+  --
+  --       -- Good defaults for local models
+  --       n_completions = 1, -- don’t spam local model
+  --       context_window = 512, -- start small, bump if it’s fast enough
+  --       throttle = 250,
+  --       debounce = 250,
+  --
+  --       -- Provider-specific config MUST go here:
+  --       provider_options = {
+  --         openai_fim_compatible = {
+  --           -- Name of an *environment variable*, not the literal key.
+  --           -- HOME works as a dummy for Ollama as long as $HOME is set.
+  --           -- Alternatively, create your own:
+  --           --   export OLLAMA_DUMMY_API_KEY=1
+  --           --   api_key = "OLLAMA_DUMMY_API_KEY",
+  --           api_key = "HOME",
+  --           name = "Ollama",
+  --           end_point = "http://localhost:11434/v1/completions",
+  --           model = "qwen2.5-coder:7b",
+  --           stream = true,
+  --           optional = {
+  --             max_tokens = 512,
+  --             temperature = 0.2,
+  --             top_p = 0.95,
+  --           },
+  --         },
+  --       },
+  --
+  --       -- Optional: turn Minuet auto-complete on/off globally for cmp/blink
+  --       blink = {
+  --         enable_auto_complete = true,
+  --       },
+  --       cmp = {
+  --         enable_auto_complete = true,
+  --       },
+  --
+  --       -- virtualtext.auto_trigger_ft is *only* for the virtual text frontend.
+  --       -- You don’t need it when using blink.cmp as the frontend.
+  --       -- virtualtext = {
+  --       --   auto_trigger_ft = { "python", "lua", ... },
+  --       -- },
+  --     })
+  --   end,
+  -- },
+  --
+  -- Blink.cmp integration (LazyVim already pulls this in)
+  -- {
+  --   "saghen/blink.cmp",
+  --   optional = true,
+  --   opts = {
+  --     sources = {
+  --       default = { "lsp", "path", "snippets", "buffer", "minuet" },
+  --       providers = {
+  --         minuet = {
+  --           name = "minuet",
+  --           module = "minuet.blink",
+  --           async = true,
+  --           timeout_ms = 3000, -- should roughly match minuet.request_timeout * 1000
+  --           score_offset = 8, -- higher = prefer minuet over others
+  --         },
+  --       },
+  --     },
+  --     completion = {
+  --       accept = {
+  --         auto_brackets = { enabled = true },
+  --       },
+  --       -- Recommended in README to avoid extra requests
+  --       trigger = {
+  --         prefetch_on_insert = true,
+  --       },
+  --     },
+  --   },
+  -- },
 }

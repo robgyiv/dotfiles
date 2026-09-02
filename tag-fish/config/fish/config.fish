@@ -147,3 +147,21 @@ starship init fish | source
 # neovim
 # use local LLM for completion
 export LLM_KEY=NONE
+
+# pnpm
+set -gx PNPM_HOME /Users/robbie/Library/pnpm
+if not string match -q -- $PNPM_HOME $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end
+
+# limaproj
+set -gx PATH $HOME/.lima/_config/limaproj/bin $PATH
+
+# zoxide
+zoxide init fish | source
+
+# rustup
+#
+# cargo
+fish_add_path $(brew --prefix rustup)/bin

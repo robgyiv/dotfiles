@@ -1,3 +1,8 @@
 .DS_Store
 .env
 *.pyc
+
+# Personal convention for internal docs in repos used by LLMs
+.private-notes/
+
+**/.claude/settings.local.json

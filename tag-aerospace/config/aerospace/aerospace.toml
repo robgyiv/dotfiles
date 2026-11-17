@@ -39,7 +39,9 @@ default-root-container-orientation = 'auto'
 on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
 
 # Mouse follows focus when focused window changed
-on-focus-changed = ['move-mouse window-lazy-center'] # Mouse lazily follows any focus (window or workspace)
+on-focus-changed = [
+  'move-mouse window-lazy-center',
+] # Mouse lazily follows any focus (window or workspace)
 
 # You can effectively turn off macOS "Hide application" (cmd-h) feature by toggling this flag
 # Useful if you don't use this macOS feature, but accidentally hit cmd-h or cmd-alt-h key
@@ -60,11 +62,11 @@ preset = 'qwerty'
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [gaps]
 inner.horizontal = 8
-inner.vertical =   8
-outer.left =       8
-outer.bottom =     8
-outer.top =        8
-outer.right =      8
+inner.vertical = 8
+outer.left = 8
+outer.bottom = 8
+outer.top = 8
+outer.right = 8
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide#binding-modes
 # 'main' binding mode must be always presented
@@ -209,12 +211,12 @@ ctrl-alt-h = 'move-node-to-monitor --focus-follows-window prev'
 ctrl-alt-l = 'move-node-to-monitor --focus-follows-window next'
 
 [workspace-to-monitor-force-assignment]
-    C = 'main'                       # Main monitor
-    F = 'main'                       # Main monitor
-    D = 'secondary'                  # Non-main monitor in case when there are only two monitors
-    M = 'secondary'                  # Non-main monitor in case when there are only two monitors
-    O = 'secondary'                  # Non-main monitor in case when there are only two monitors
-    S = 'secondary'                  # Non-main monitor in case when there are only two monitors
+C = 'main' # Main monitor
+F = 'main' # Main monitor
+D = 'secondary' # Non-main monitor in case when there are only two monitors
+M = 'secondary' # Non-main monitor in case when there are only two monitors
+O = 'secondary' # Non-main monitor in case when there are only two monitors
+S = 'secondary' # Non-main monitor in case when there are only two monitors
 
 # App-specific workspaces
 [[on-window-detected]]
@@ -246,7 +248,7 @@ run = 'move-node-to-workspace D'
 
 [[on-window-detected]]
 if.app-id = 'org.mozilla.firefox'
-run = 'move-node-to-workspace F'
+run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'com.spotify.client'
@@ -258,11 +260,11 @@ run = 'move-node-to-workspace 1'
 
 [[on-window-detected]]
 if.app-id = 'org.torproject.torbrowser'
-run = [ "layout floating" ]
+run = ["layout floating"]
 
 [[on-window-detected]]
 if.app-id = 'tech.median.Tomato2'
-run = [ "layout floating" ]
+run = ["layout floating"]
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'

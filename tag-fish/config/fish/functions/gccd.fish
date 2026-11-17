@@ -1,4 +1,4 @@
-# git clone, cd into directory in a tmux session
+# git clone, cd into directory in a rex session
 # Usage: 
 #   SSH:   gccd -r git@gitlab.com:username/possible-project/repo-name.git [-d depth]
 #   HTTPS: gccd -r https://gitlab.com/username/possible-project/repo-name.git [-d depth]
@@ -54,7 +54,7 @@ function gccd
         echo "> Directory already exists at $full_repo_path"
         echo "> Changing to directory"
         cd $full_repo_path
-        attach-tmux (basename (pwd))
+        rex-session (basename (pwd)) (pwd)
         return 0
     end
 
@@ -74,29 +74,5 @@ function gccd
 
     echo "> Changing to directory"
     cd $full_repo_path
-    attach-tmux (basename (pwd))
-end
-
-function attach-tmux -a session_name
-    if test -z "$session_name"
-        echo "Error: Session name is required"
-        return 1
-    end
-
-    set session_name (string replace -a -r '[.:\s]' '_' $session_name)
-
-    if test -n "$TMUX"
-        if tmux has-session -t $session_name 2>/dev/null
-            tmux switch-client -t $session_name
-        else
-            tmux new -d -s $session_name
-            tmux switch-client -t $session_name
-        end
-    else
-        if tmux has-session -t $session_name 2>/dev/null
-            tmux attach-session -t $session_name
-        else
-            tmux new-session -s $session_name
-        end
-    end
+    rex-session (basename (pwd)) (pwd)
 end

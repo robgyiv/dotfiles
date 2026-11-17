@@ -1,4 +1,4 @@
-function gnr --description "Create a new git repo under ~/code/github.com/robgyiv and open it in a tmux session"
+function gnr --description "Create a new git repo under ~/code/github.com/robgyiv and open it in a rex session"
     if test (count $argv) -lt 1
         echo "Usage: gnr <repo-name>"
         return 1
@@ -15,16 +15,5 @@ function gnr --description "Create a new git repo under ~/code/github.com/robgyi
     mkdir -p "$DIR"; or return 1
     git -C "$DIR" init; or return 1
 
-    # tmux session names can't contain dots; swap them for underscores
-    set -l session (string replace -a '.' '_' -- $name)
-
-    if not tmux has-session -t "$session" 2>/dev/null
-        tmux new-session -d -s "$session" -c "$DIR"
-    end
-
-    if set -q TMUX
-        tmux switch-client -t "$session"
-    else
-        tmux attach-session -t "$session"
-    end
+    rex-session $name "$DIR"
 end

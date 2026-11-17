@@ -1,3 +1,7 @@
+# The following lines were added by Docker Desktop to add commands to your PATH.
+export PATH="$PATH:/Users/robbie/.docker/bin"
+# End of Docker Desktop section.
+
 # Remove fish welcome message
 set fish_greeting
 
@@ -165,3 +169,8 @@ zoxide init fish | source
 #
 # cargo
 fish_add_path $(brew --prefix rustup)/bin
+
+# rex
+if set -q REX_BIN_DIR
+    fish_add_path --path --prepend --move $REX_BIN_DIR
+end
